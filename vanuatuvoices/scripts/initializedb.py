@@ -31,12 +31,12 @@ def main(args):
     assert license and license.id.startswith('CC-')
 
     data = Data()
-    data.add(
+    ds = data.add(
         common.Dataset,
         vanuatuvoices.__name__,
         id=vanuatuvoices.__name__,
+        name='Vanuatu Voices',
         domain='vanuatuvoices.clld.org',
-
         publisher_name="Max Planck Institute for the Science of Human History",
         publisher_place="Jena",
         publisher_url="https://www.shh.mpg.de",
@@ -58,13 +58,14 @@ def main(args):
     r = get_dataset('vanuatuvoices', ep='lexibank.dataset')
     authors, _ = r.get_creators_and_contributors()
     for ord, author in enumerate(authors):
-        DBSession.add(common.ContributionContributor(
-            contribution=contrib,
-            contributor=common.Contributor(
-                id=slug(HumanName(author['name']).last),
-                name=author['name'],
-                description=author.get('description'))
-        ))
+        c = data.add(
+            common.Contributor,
+            slug(HumanName(author['name']).last),
+            id=slug(HumanName(author['name']).last),
+            name=author['name'],
+            description=author.get('description'))
+        DBSession.add(common.ContributionContributor(contribution=contrib, contributor=c))
+    DBSession.add(common.Editor(dataset=ds, contributor=data['Contributor']['walworth']))
 
     form2audio = {}
     for r in args.cldf.iter_rows('media.csv', 'id', 'formReference'):

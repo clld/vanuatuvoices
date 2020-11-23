@@ -7,6 +7,27 @@
     ##<a href="${request.route_url('dataset')}">
     ##    <img src="${request.static_url('vanuatuvoices:static/header.gif')}"/>
     ##</a>
+        <style>
+        #html {
+            min-height: 99%; /* or whatever your desired height is */
+            height: 99%; /* or whatever your desired height is */
+            min-width: 99%; /* or whatever your desired width is */
+            width: 99%; /* or whatever your desired width is */
+        }
+
+        html::after {
+            content: "";
+            background-image: url('${req.static_url("vanuatuvoices:static/ico-Vanuatu.jpg")}');
+            background-size: cover;
+            opacity: 0.15;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            z-index: -2;
+        }
+    </style>
 </%block>
 
 <%block name="navextra">
