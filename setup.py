@@ -19,12 +19,10 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        'clld',  # >=7.0
-
+        'clld>=7.3.1',  # >=7.0
+        'cldfbench',
         'clld-glottologfamily-plugin>=4.0',
         'pyglottolog',
-
-
         'clldmpg',
 
 ],

@@ -4,29 +4,31 @@ import collections
 from pycldf import Sources
 from clldutils.misc import nfilter
 from clldutils.color import qualitative_colors
+from clldutils.misc import slug
+from clldutils import licenses
 from clld.cliutil import Data, bibtex2source
 from clld.db.meta import DBSession
 from clld.db.models import common
 from clld.lib import bibtex
+from nameparser import HumanName
 
 from clld_glottologfamily_plugin.util import load_families
-
+from cldfbench import get_dataset
 
 import vanuatuvoices
 from vanuatuvoices import models
 
-
-def iteritems(cldf, t, *cols):
-    cmap = {cldf[t, col].name: col for col in cols}
-    for item in cldf[t]:
-        for k, v in cmap.items():
-            item[v] = item[k]
-        yield item
+"""
+([{'description': 'author, data entry, audio recordings', 'name': 'Aviva Shimelman', 'github user': ''}, {'description': 'author', 'name': 'Paul Heggarty', 'github user': ''}, {'description': 'author, data entry, audio recordings', 'name': 'Tom Enneve', 'github user': ''}, {'description': 'author, data entry, audio recordings, audio post-processing, mark-up', 'name': 'Iveth Rodriguez', 'github user': ''}, {'description': 'author, data entry, audio recordings, audio post-processing, mark-up', 'name': 'Tom Fitzpatrick', 'github user': ''}, {'description': 'author, data entry, audio recordings', 'name': 'Marie-France Duhamel', 'github user': ''}, {'description': 'author, data entry, audio recordings', 'name': 'Lana Takau', 'github user': ''}, {'description': 'data entry', 'name': 'Mary Walworth', 'github user': ''}, {'description': 'data entry', 'name': 'Giovanni Abete', 'github user': ''}, {'description': 'data entry', 'name': 'Benjamin Touati', 'github user': ''}, {'description': 'audio post-processing, mark-up', 'name': 'Darja Dërmaku-Appelganz', 'github user': ''}, {'description': 'audio post-processing, mark-up', 'name': 'Laura Wägerle', 'github user': ''}, {'description': 'admin', 'name': 'Kaitip W. Kami', 'github user': ''}, {'description': 'admin', 'name': 'Heidi Colleran', 'github user': ''}, {'description': 'admin', 'name': 'Russell Gray', 'github user': ''}, {'description': 'audio post-processing, mark-up', 'name': 'Darja Dërmaku-Appelganz', 'github user': ''}, {'description': 'audio post-processing, mark-up', 'name': 'Laura Wägerle', 'github user': ''}], [{'description': 'patron, maintainer', 'name': 'Hans-Jörg Bibiko', 'type': 'Other', 'github user': '@Bibiko'}])
+"""
 
 
 def main(args):
 
     assert args.glottolog, 'The --glottolog option is required!'
+
+    license = licenses.find(args.cldf.properties['dc:license'])
+    assert license and license.id.startswith('CC-')
 
     data = Data()
     data.add(
@@ -37,14 +39,14 @@ def main(args):
 
         publisher_name="Max Planck Institute for the Science of Human History",
         publisher_place="Jena",
-        publisher_url="http://www.shh.mpg.de",
-        license="http://creativecommons.org/licenses/by/4.0/",
+        publisher_url="https://www.shh.mpg.de",
+        license=license.url,
         jsondata={
-            'license_icon': 'cc-by.png',
-            'license_name': 'Creative Commons Attribution 4.0 International License'},
+            'license_icon': '{}.png'.format(
+                '-'.join([p.lower() for p in license.id.split('-')[:-1]])),
+            'license_name': license.name},
 
     )
-
 
     contrib = data.add(
         common.Contribution,
@@ -53,13 +55,23 @@ def main(args):
         name=args.cldf.properties.get('dc:title'),
         description=args.cldf.properties.get('dc:bibliographicCitation'),
     )
+    r = get_dataset('vanuatuvoices', ep='lexibank.dataset')
+    authors, _ = r.get_creators_and_contributors()
+    for ord, author in enumerate(authors):
+        DBSession.add(common.ContributionContributor(
+            contribution=contrib,
+            contributor=common.Contributor(
+                id=slug(HumanName(author['name']).last),
+                name=author['name'],
+                description=author.get('description'))
+        ))
 
     form2audio = {}
     for r in args.cldf.iter_rows('media.csv', 'id', 'formReference'):
         if r['mimetype'] == 'audio/mpeg':
             form2audio[r['formReference']] = r
 
-    for lang in iteritems(args.cldf, 'LanguageTable', 'id', 'glottocode', 'name', 'latitude', 'longitude'):
+    for lang in args.cldf.iter_rows('LanguageTable', 'id', 'glottocode', 'name', 'latitude', 'longitude'):
         data.add(
             models.Variety,
             lang['id'],
@@ -75,14 +87,14 @@ def main(args):
 
     refs = collections.defaultdict(list)
 
-    for param in iteritems(args.cldf, 'ParameterTable', 'id', 'concepticonReference', 'name'):
+    for param in args.cldf.iter_rows('ParameterTable', 'id', 'concepticonReference', 'name'):
         data.add(
             models.Concept,
             param['id'],
             id=param['id'],
             name='{} [{}]'.format(param['name'], param['id']),
         )
-    for form in iteritems(args.cldf, 'FormTable', 'id', 'form', 'languageReference', 'parameterReference', 'source'):
+    for form in args.cldf.iter_rows('FormTable', 'id', 'form', 'languageReference', 'parameterReference', 'source'):
         vsid = (form['languageReference'], form['parameterReference'])
         vs = data['ValueSet'].get(vsid)
         if not vs:
@@ -120,7 +132,6 @@ def main(args):
         isolates_icon='tcccccc',
         strict=False,
     )
-
 
 
 def prime_cache(args):

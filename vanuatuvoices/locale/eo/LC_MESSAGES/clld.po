@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-11-21 15:01+0100\n"
+"POT-Creation-Date: 2020-11-23 11:23+0100\n"
 "PO-Revision-Date: 2020-11-20 20:00+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: eo\n"
@@ -31,86 +31,92 @@ msgid "Language"
 msgstr "Lanvis"
 
 #: vanuatuvoices/__init__.py:18
+#: vanuatuvoices/templates/parameter/detail_html.mako:4
+#: vanuatuvoices/templates/parameter/detail_html.mako:8
 msgid "Parameter"
 msgstr "Wod"
 
 #: vanuatuvoices/__init__.py:19
+msgid "Contributors"
+msgstr "Ol kontributa"
+
+#: vanuatuvoices/__init__.py:20
 msgid "Download"
 msgstr "Daonlodem"
 
-#: vanuatuvoices/__init__.py:20
+#: vanuatuvoices/__init__.py:21
 msgid "Contact"
 msgstr "Kontak"
 
-#: vanuatuvoices/__init__.py:21
+#: vanuatuvoices/__init__.py:22
 msgid "Legal"
 msgstr "Imprin"
 
-#: vanuatuvoices/__init__.py:22
+#: vanuatuvoices/__init__.py:23
 msgid "Home"
 msgstr "Hom"
 
-#: vanuatuvoices/__init__.py:23
+#: vanuatuvoices/__init__.py:24
 msgid "You can contact us via email at"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:26
+#: vanuatuvoices/__init__.py:27
 msgid "Icon size"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:27
+#: vanuatuvoices/__init__.py:28
 msgid "Show/hide Labels"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:30
+#: vanuatuvoices/__init__.py:31
 msgid "Next"
 msgstr "nekis"
 
-#: vanuatuvoices/__init__.py:31
+#: vanuatuvoices/__init__.py:32
 msgid "Previous"
 msgstr "we i kam bifo"
 
-#: vanuatuvoices/__init__.py:32
+#: vanuatuvoices/__init__.py:33
 msgid "First"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:33
+#: vanuatuvoices/__init__.py:34
 msgid "Last"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:34
+#: vanuatuvoices/__init__.py:35
 msgid "No data available in table"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:35
+#: vanuatuvoices/__init__.py:36
 msgid "Showing _START_ to _END_ of _TOTAL_ entries"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:36
+#: vanuatuvoices/__init__.py:37
 msgid "Showing 0 to 0 of 0 entries"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:37
+#: vanuatuvoices/__init__.py:38
 msgid "(filtered from _MAX_ total entries)"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:38
+#: vanuatuvoices/__init__.py:39
 msgid "Show _MENU_ entries"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:39
+#: vanuatuvoices/__init__.py:40
 msgid "Loading..."
 msgstr ""
 
-#: vanuatuvoices/__init__.py:40
+#: vanuatuvoices/__init__.py:41
 msgid "Processing..."
 msgstr ""
 
-#: vanuatuvoices/__init__.py:41
+#: vanuatuvoices/__init__.py:42
 msgid "Search:"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:42
+#: vanuatuvoices/__init__.py:43
 msgid "No matching records found"
 msgstr ""
 
