@@ -10,11 +10,10 @@
         <ul class='unstyled'>
             % for value in valueset.values:
             <li>
-                ${h.map_marker_img(request, value)}
-                ${h.link(request, valueset, label=str(value))}
-                ${h.format_frequency(request, value)}
+                <span class="form">${value}</span>
+                <br>
                 % if value.jsondatadict.get('audio'):
-                    <audio controls="controls">
+                    <audio controls="controls" class="popup-audio">
                         <source src="${value.jsondata['audio']}" type="audio/mpeg" />
                     </audio>
                 % endif

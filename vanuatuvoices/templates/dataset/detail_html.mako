@@ -2,10 +2,7 @@
 
 <%def name="sidebar()">
     <div class="well">
-        <h3>Sidebar</h3>
-        <p>
-            Content
-        </p>
+        <img src="${req.static_url('vanuatuvoices:static/ico-Vanuatu.jpg')}" class="img-rounded">
     </div>
 </%def>
 
@@ -23,3 +20,7 @@
 <blockquote>
     Heggarty, Paul et al. 2019. Sound Comparisons: A new online database and resource for research in phonetic diversity. Proceedings of ICPhS 19, Melbourne, pp. 280-284, see paper for full list of authors.
 </blockquote>
+
+The following people contributed to Vanuatu Voices:
+
+${req.get_datatable('contributors', h.models.Contributor).render()}

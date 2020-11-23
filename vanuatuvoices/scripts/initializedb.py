@@ -80,6 +80,7 @@ def main(args):
             latitude=lang['latitude'],
             longitude=lang['longitude'],
             glottocode=lang['glottocode'],
+            description=lang['LongName'],
         )
 
     for rec in bibtex.Database.from_file(args.cldf.bibpath, lowercase=True):
@@ -92,7 +93,10 @@ def main(args):
             models.Concept,
             param['id'],
             id=param['id'],
-            name='{} [{}]'.format(param['name'], param['id']),
+            name='{} [{}]'.format(param['name'], param['id'].split('_')[0]),
+            description=param['Bislama_Gloss'],
+            concepticon_id=param['concepticonReference'],
+            concepticon_gloss=param['Concepticon_Gloss'],
         )
     for form in args.cldf.iter_rows('FormTable', 'id', 'form', 'languageReference', 'parameterReference', 'source'):
         vsid = (form['languageReference'], form['parameterReference'])

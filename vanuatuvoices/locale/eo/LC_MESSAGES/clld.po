@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-11-23 11:23+0100\n"
+"POT-Creation-Date: 2020-11-23 16:00+0100\n"
 "PO-Revision-Date: 2020-11-20 20:00+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: eo\n"
@@ -26,7 +26,7 @@ msgstr "Ol lanvis"
 msgid "Parameters"
 msgstr "Ol wod"
 
-#: vanuatuvoices/__init__.py:17
+#: vanuatuvoices/__init__.py:17 vanuatuvoices/datatables.py:65
 msgid "Language"
 msgstr "Lanvis"
 
@@ -120,15 +120,63 @@ msgstr ""
 msgid "No matching records found"
 msgstr ""
 
-#: vanuatuvoices/templates/dataset/detail_html.mako:12
+#: vanuatuvoices/datatables.py:55 vanuatuvoices/datatables.py:100
+msgid "English"
+msgstr "Inglis"
+
+#: vanuatuvoices/datatables.py:58 vanuatuvoices/datatables.py:101
+msgid "Bislama"
+msgstr ""
+
+#: vanuatuvoices/datatables.py:68
+msgid "Location"
+msgstr ""
+
+#: vanuatuvoices/datatables.py:75
+msgid "Word"
+msgstr "Wod"
+
+#: vanuatuvoices/datatables.py:87
+msgid "Name"
+msgstr "Nam"
+
+#: vanuatuvoices/datatables.py:88
+msgid "Role"
+msgstr ""
+
+#: vanuatuvoices/templates/download.mako:4
+msgid "Downloads"
+msgstr "Ol Daonlod"
+
+#: vanuatuvoices/templates/download.mako:8
+msgid "Vanuatu Voices serves the latest"
+msgstr ""
+
+#: vanuatuvoices/templates/download.mako:9
+msgid "released version"
+msgstr ""
+
+#: vanuatuvoices/templates/download.mako:10
+msgid "of data curated at"
+msgstr ""
+
+#: vanuatuvoices/templates/download.mako:12
+msgid "All released version are accessible via"
+msgstr ""
+
+#: vanuatuvoices/templates/download.mako:17
+msgid "on ZENODO as well"
+msgstr ""
+
+#: vanuatuvoices/templates/dataset/detail_html.mako:9
 msgid "Welcome to"
 msgstr ""
 
-#: vanuatuvoices/templates/dataset/detail_html.mako:15
+#: vanuatuvoices/templates/dataset/detail_html.mako:12
 msgid "Acknowlegements"
 msgstr ""
 
-#: vanuatuvoices/templates/dataset/detail_html.mako:18
+#: vanuatuvoices/templates/dataset/detail_html.mako:15
 msgid "This site drew inspiration from Paul Heggarty's"
 msgstr ""
 

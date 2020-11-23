@@ -5,11 +5,7 @@
 
 
 
-<h2>${_('Parameter')} ${ctx.name}</h2>
-
-% if ctx.description:
-<p>${ctx.description}</p>
-% endif
+<h2>${_('Parameter')} "${ctx.description if req._LOCALE_ == 'eo' else ctx.name}"</h2>
 
 <div style="clear: both"/>
 % if map_ or request.map:
