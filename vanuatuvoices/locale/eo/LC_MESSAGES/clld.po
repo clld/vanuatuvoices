@@ -50,7 +50,7 @@ msgstr "Kontak"
 
 #: vanuatuvoices/__init__.py:22
 msgid "Legal"
-msgstr "Imprin"
+msgstr "Likol"
 
 #: vanuatuvoices/__init__.py:23
 msgid "Home"
@@ -58,15 +58,15 @@ msgstr "Hom"
 
 #: vanuatuvoices/__init__.py:24
 msgid "You can contact us via email at"
-msgstr ""
+msgstr "Yu save kontaktem mifala long imel ia"
 
 #: vanuatuvoices/__init__.py:27
 msgid "Icon size"
-msgstr ""
+msgstr "Saes blong aekon"
 
 #: vanuatuvoices/__init__.py:28
 msgid "Show/hide Labels"
-msgstr ""
+msgstr "Soem/haedem ol Lebol"
 
 #: vanuatuvoices/__init__.py:31
 msgid "Next"
@@ -78,47 +78,47 @@ msgstr "we i kam bifo"
 
 #: vanuatuvoices/__init__.py:33
 msgid "First"
-msgstr ""
+msgstr "Feswan"
 
 #: vanuatuvoices/__init__.py:34
 msgid "Last"
-msgstr ""
+msgstr "Laswan"
 
 #: vanuatuvoices/__init__.py:35
 msgid "No data available in table"
-msgstr ""
+msgstr "I nogat data i stap long tebol"
 
 #: vanuatuvoices/__init__.py:36
 msgid "Showing _START_ to _END_ of _TOTAL_ entries"
-msgstr ""
+msgstr "Shoem _START_ kasem _END_ blong ol _TOTAL_ infomeisen we wan man i entarem"
 
 #: vanuatuvoices/__init__.py:37
 msgid "Showing 0 to 0 of 0 entries"
-msgstr ""
+msgstr "Shoem 0 kasem 0 blong ol infomeisen we wan man i entarem"
 
 #: vanuatuvoices/__init__.py:38
 msgid "(filtered from _MAX_ total entries)"
-msgstr ""
+msgstr "(karemaot long _MAX_ namba blong ol infomeisen we wan man i entarem)"
 
 #: vanuatuvoices/__init__.py:39
 msgid "Show _MENU_ entries"
-msgstr ""
+msgstr "Soem _MENU_ ol infomeisen we wan man i entarem"
 
 #: vanuatuvoices/__init__.py:40
 msgid "Loading..."
-msgstr ""
+msgstr "I stap gohed..."
 
 #: vanuatuvoices/__init__.py:41
 msgid "Processing..."
-msgstr ""
+msgstr "I stap gohed..."
 
 #: vanuatuvoices/__init__.py:42
 msgid "Search:"
-msgstr ""
+msgstr "Lukaotem:"
 
 #: vanuatuvoices/__init__.py:43
 msgid "No matching records found"
-msgstr ""
+msgstr "Oli no faenem rikod we i semak"
 
 #: vanuatuvoices/datatables.py:55 vanuatuvoices/datatables.py:100
 msgid "English"
