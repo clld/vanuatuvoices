@@ -65,7 +65,11 @@ def main(args):
             name=author['name'],
             description=author.get('description'))
         DBSession.add(common.ContributionContributor(contribution=contrib, contributor=c))
-    DBSession.add(common.Editor(dataset=ds, contributor=data['Contributor']['walworth']))
+    for ord, cid in enumerate(['gray', 'walworth']):
+        DBSession.add(common.Editor(
+            ord=ord,
+            dataset=ds,
+            contributor=data['Contributor'][cid]))
 
     form2audio = {}
     for r in args.cldf.iter_rows('media.csv', 'id', 'formReference'):
