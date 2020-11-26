@@ -18,6 +18,7 @@
 <table class="table table-condensed">
     <thead>
     <tr>
+        <th></th>
         <th>${_('Name')}</th>
         <th>${_('Role')}</th>
     </tr>
@@ -25,6 +26,13 @@
     <tbody>
         % for contrib in contributors:
             <tr>
+                <td>
+                    % if contrib.jsondata['img']:
+                    <img width="60"
+                         src="${req.static_url('vanuatuvoices:static/{}'.format(contrib.jsondata['img']))}"
+                         class="img-rounded">
+                    % endif
+                </td>
                 <td>${contrib.name}</td>
                 <td>${contrib.description}</td>
             </tr>

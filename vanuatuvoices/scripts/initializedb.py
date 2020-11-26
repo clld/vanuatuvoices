@@ -1,4 +1,4 @@
-import itertools
+import pathlib
 import collections
 
 from pycldf import Sources
@@ -18,13 +18,8 @@ from cldfbench import get_dataset
 import vanuatuvoices
 from vanuatuvoices import models
 
-"""
-([{'description': 'author, data entry, audio recordings', 'name': 'Aviva Shimelman', 'github user': ''}, {'description': 'author', 'name': 'Paul Heggarty', 'github user': ''}, {'description': 'author, data entry, audio recordings', 'name': 'Tom Enneve', 'github user': ''}, {'description': 'author, data entry, audio recordings, audio post-processing, mark-up', 'name': 'Iveth Rodriguez', 'github user': ''}, {'description': 'author, data entry, audio recordings, audio post-processing, mark-up', 'name': 'Tom Fitzpatrick', 'github user': ''}, {'description': 'author, data entry, audio recordings', 'name': 'Marie-France Duhamel', 'github user': ''}, {'description': 'author, data entry, audio recordings', 'name': 'Lana Takau', 'github user': ''}, {'description': 'data entry', 'name': 'Mary Walworth', 'github user': ''}, {'description': 'data entry', 'name': 'Giovanni Abete', 'github user': ''}, {'description': 'data entry', 'name': 'Benjamin Touati', 'github user': ''}, {'description': 'audio post-processing, mark-up', 'name': 'Darja Dërmaku-Appelganz', 'github user': ''}, {'description': 'audio post-processing, mark-up', 'name': 'Laura Wägerle', 'github user': ''}, {'description': 'admin', 'name': 'Kaitip W. Kami', 'github user': ''}, {'description': 'admin', 'name': 'Heidi Colleran', 'github user': ''}, {'description': 'admin', 'name': 'Russell Gray', 'github user': ''}, {'description': 'audio post-processing, mark-up', 'name': 'Darja Dërmaku-Appelganz', 'github user': ''}, {'description': 'audio post-processing, mark-up', 'name': 'Laura Wägerle', 'github user': ''}], [{'description': 'patron, maintainer', 'name': 'Hans-Jörg Bibiko', 'type': 'Other', 'github user': '@Bibiko'}])
-"""
-
 
 def main(args):
-
     assert args.glottolog, 'The --glottolog option is required!'
 
     license = licenses.find(args.cldf.properties['dc:license'])
@@ -58,12 +53,16 @@ def main(args):
     r = get_dataset('vanuatuvoices', ep='lexibank.dataset')
     authors, _ = r.get_creators_and_contributors()
     for ord, author in enumerate(authors):
+        cid = slug(HumanName(author['name']).last)
+        img = pathlib.Path(vanuatuvoices.__file__).parent / 'static' / '{}.jpg'.format(cid)
         c = data.add(
             common.Contributor,
-            slug(HumanName(author['name']).last),
-            id=slug(HumanName(author['name']).last),
+            cid,
+            id=cid,
             name=author['name'],
-            description=author.get('description'))
+            description=author.get('description'),
+            jsondata=dict(img=img.name if img.exists() else None),
+        )
         DBSession.add(common.ContributionContributor(contribution=contrib, contributor=c))
     for ord, cid in enumerate(['gray', 'walworth']):
         DBSession.add(common.Editor(
