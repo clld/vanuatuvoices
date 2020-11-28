@@ -17,5 +17,7 @@
 <div id="with-background">
     <h2>${_('Welcome to')} Vanuatu Voices</h2>
 
-
+    <p class="lead">
+        ${_('Vanuatu Voices presents phonetically-transcribed primary recordings, from numerous villages throughout different islands, to both document and exhibit the extensive variation and unparalleled diversity of the Vanuatu languages.')}
+    </p>
 </div>
