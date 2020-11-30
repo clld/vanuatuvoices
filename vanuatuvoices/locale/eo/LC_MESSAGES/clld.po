@@ -20,7 +20,7 @@ msgstr ""
 
 #: vanuatuvoices/__init__.py:15
 msgid "Languages"
-msgstr "Ol lanvis"
+msgstr "Ol lanwis"
 
 #: vanuatuvoices/__init__.py:16
 msgid "Parameters"
@@ -30,7 +30,7 @@ msgstr "Ol wod"
 #: vanuatuvoices/templates/language/detail_html.mako:4
 #: vanuatuvoices/templates/language/detail_html.mako:6
 msgid "Language"
-msgstr "Lanvis"
+msgstr "Lanwis"
 
 #: vanuatuvoices/__init__.py:18
 #: vanuatuvoices/templates/parameter/detail_html.mako:4
