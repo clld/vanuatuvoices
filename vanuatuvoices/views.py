@@ -4,6 +4,5 @@ from clld.db.models import common
 
 def credits(context, request):
     return {'contributors': DBSession.query(common.Contributor)
-        .join(common.ContributionContributor)
-        .order_by(common.ContributionContributor.ord)
+        .order_by(common.Contributor.id)
         .all()}
