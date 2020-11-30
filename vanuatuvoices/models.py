@@ -29,8 +29,6 @@ class Variety(CustomModelMixin, common.Language, HasFamilyMixin):
     glottocode = Column(Unicode)
 
 
-
-
 @implementer(interfaces.IParameter)
 class Concept(CustomModelMixin, common.Parameter):
     pk = Column(Integer, ForeignKey('parameter.pk'), primary_key=True)

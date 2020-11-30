@@ -43,6 +43,9 @@ def main(args):
 
     )
 
+    #
+    # FIXME: turn eah variety into a separate contribution!
+    #
     contrib = data.add(
         common.Contribution,
         None,
@@ -63,6 +66,9 @@ def main(args):
             description=author.get('description'),
             jsondata=dict(img=img.name if img.exists() else None),
         )
+        #
+        # FIXME: add roles-per-variety as ContributionContributor.jsondata['roles']
+        #
         DBSession.add(common.ContributionContributor(contribution=contrib, contributor=c))
     for ord, cid in enumerate(['gray', 'walworth']):
         DBSession.add(common.Editor(
