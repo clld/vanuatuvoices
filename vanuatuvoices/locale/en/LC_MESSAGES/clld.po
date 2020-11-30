@@ -1,0 +1,214 @@
+# English translations for vanuatuvoices.
+# Copyright (C) 2020 ORGANIZATION
+# This file is distributed under the same license as the vanuatuvoices
+# project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vanuatuvoices 0.0\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2020-11-30 09:47+0100\n"
+"PO-Revision-Date: 2020-11-30 09:45+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: vanuatuvoices/__init__.py:15
+msgid "Languages"
+msgstr ""
+
+#: vanuatuvoices/__init__.py:16
+msgid "Parameters"
+msgstr "Concepts"
+
+#: vanuatuvoices/__init__.py:17 vanuatuvoices/datatables.py:65
+#: vanuatuvoices/templates/language/detail_html.mako:4
+#: vanuatuvoices/templates/language/detail_html.mako:6
+msgid "Language"
+msgstr ""
+
+#: vanuatuvoices/__init__.py:18
+#: vanuatuvoices/templates/parameter/detail_html.mako:4
+#: vanuatuvoices/templates/parameter/detail_html.mako:8
+msgid "Parameter"
+msgstr "Concept"
+
+#: vanuatuvoices/__init__.py:19
+msgid "Contributors"
+msgstr ""
+
+#: vanuatuvoices/__init__.py:20
+msgid "Download"
+msgstr ""
+
+#: vanuatuvoices/__init__.py:21
+msgid "Contact"
+msgstr ""
+
+#: vanuatuvoices/__init__.py:22
+msgid "Credits"
+msgstr ""
+
+#: vanuatuvoices/__init__.py:23
+msgid "Legal"
+msgstr ""
+
+#: vanuatuvoices/__init__.py:24
+msgid "Home"
+msgstr ""
+
+#: vanuatuvoices/__init__.py:25
+msgid "You can contact us via email at"
+msgstr ""
+
+#: vanuatuvoices/__init__.py:28
+msgid "Icon size"
+msgstr ""
+
+#: vanuatuvoices/__init__.py:29
+msgid "Show/hide Labels"
+msgstr ""
+
+#: vanuatuvoices/__init__.py:32
+msgid "Next"
+msgstr ""
+
+#: vanuatuvoices/__init__.py:33
+msgid "Previous"
+msgstr ""
+
+#: vanuatuvoices/__init__.py:34
+msgid "First"
+msgstr ""
+
+#: vanuatuvoices/__init__.py:35
+msgid "Last"
+msgstr ""
+
+#: vanuatuvoices/__init__.py:36
+msgid "No data available in table"
+msgstr ""
+
+#: vanuatuvoices/__init__.py:37
+msgid "Showing _START_ to _END_ of _TOTAL_ entries"
+msgstr ""
+
+#: vanuatuvoices/__init__.py:38
+msgid "Showing 0 to 0 of 0 entries"
+msgstr ""
+
+#: vanuatuvoices/__init__.py:39
+msgid "(filtered from _MAX_ total entries)"
+msgstr ""
+
+#: vanuatuvoices/__init__.py:40
+msgid "Show _MENU_ entries"
+msgstr ""
+
+#: vanuatuvoices/__init__.py:41
+msgid "Loading..."
+msgstr ""
+
+#: vanuatuvoices/__init__.py:42
+msgid "Processing..."
+msgstr ""
+
+#: vanuatuvoices/__init__.py:43
+msgid "Search:"
+msgstr ""
+
+#: vanuatuvoices/__init__.py:44
+msgid "No matching records found"
+msgstr ""
+
+#: vanuatuvoices/datatables.py:55 vanuatuvoices/datatables.py:100
+msgid "English"
+msgstr ""
+
+#: vanuatuvoices/datatables.py:58 vanuatuvoices/datatables.py:101
+msgid "Bislama"
+msgstr ""
+
+#: vanuatuvoices/datatables.py:68
+msgid "Location"
+msgstr ""
+
+#: vanuatuvoices/datatables.py:75
+msgid "Word"
+msgstr ""
+
+#: vanuatuvoices/datatables.py:87 vanuatuvoices/templates/credits.mako:26
+msgid "Name"
+msgstr ""
+
+#: vanuatuvoices/datatables.py:88 vanuatuvoices/templates/credits.mako:27
+msgid "Role"
+msgstr ""
+
+#: vanuatuvoices/templates/credits.mako:3
+msgid "Acknowlegements"
+msgstr ""
+
+#: vanuatuvoices/templates/credits.mako:6
+msgid "This site drew inspiration from Paul Heggarty's"
+msgstr ""
+
+#: vanuatuvoices/templates/credits.mako:15
+msgid "The following people contributed to the Vanuatu Voices dataset"
+msgstr ""
+
+#: vanuatuvoices/templates/credits.mako:19
+msgid ""
+"We wish to thank our many collaborators at the Vanuatu Cultural Centre in"
+" Port Vila, Vanuatu (especially, Director Richard Shing, Kaitip Kami, "
+"Henline Mala, Evelyne Bulegih, Iarawai Philipp, and Edson Willie) as well"
+" as the Cultural Centre fieldworkers on each individual island, without "
+"whom this project would not have been possible."
+msgstr ""
+
+#: vanuatuvoices/templates/credits.mako:48
+msgid "also provided the Bislama translations for this website"
+msgstr ""
+
+#: vanuatuvoices/templates/download.mako:4
+msgid "Downloads"
+msgstr ""
+
+#: vanuatuvoices/templates/download.mako:8
+msgid "Vanuatu Voices serves the latest"
+msgstr ""
+
+#: vanuatuvoices/templates/download.mako:9
+msgid "released version"
+msgstr ""
+
+#: vanuatuvoices/templates/download.mako:10
+msgid "of data curated at"
+msgstr ""
+
+#: vanuatuvoices/templates/download.mako:12
+msgid "All released version are accessible via"
+msgstr ""
+
+#: vanuatuvoices/templates/download.mako:17
+msgid "on ZENODO as well"
+msgstr ""
+
+#: vanuatuvoices/templates/dataset/detail_html.mako:18
+msgid "Welcome to"
+msgstr ""
+
+#: vanuatuvoices/templates/dataset/detail_html.mako:21
+msgid ""
+"Vanuatu Voices presents phonetically-transcribed primary recordings, from"
+" numerous villages throughout different islands, to both document and "
+"exhibit the extensive variation and unparalleled diversity of the Vanuatu"
+" languages."
+msgstr ""
+
