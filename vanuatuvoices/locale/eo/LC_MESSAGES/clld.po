@@ -136,7 +136,7 @@ msgstr ""
 
 #: vanuatuvoices/datatables.py:68
 msgid "Location"
-msgstr ""
+msgstr "Lokeisen"
 
 #: vanuatuvoices/datatables.py:75
 msgid "Word"
@@ -148,15 +148,15 @@ msgstr "Nam"
 
 #: vanuatuvoices/datatables.py:88 vanuatuvoices/templates/credits.mako:27
 msgid "Role"
-msgstr ""
+msgstr "Wok"
 
 #: vanuatuvoices/templates/credits.mako:3
 msgid "Acknowlegements"
-msgstr ""
+msgstr "Ol tankio toktok"
 
 #: vanuatuvoices/templates/credits.mako:6
 msgid "This site drew inspiration from Paul Heggarty's"
-msgstr ""
+msgstr "Tingting bihaen long saet ia i kamaot folem Sound Comparisons blong Paul Heggarty "
 
 #: vanuatuvoices/templates/credits.mako:15
 msgid "The following people contributed to the Vanuatu Voices dataset"
@@ -170,6 +170,12 @@ msgid ""
 " as the Cultural Centre fieldworkers on each individual island, without "
 "whom this project would not have been possible."
 msgstr ""
+"Mifala i wantem talem tankio long plante man long Vanuatu Kaljorol Senta "
+"long Port Vila we oli bin givhan long mifala (espeseli, Daerekta Richard Shing,"
+" Kaitip Kami, Henline Mala, Evelyn Buleigih, Iarawai Philipp mo Edson Willie) "
+"wetem ol filwoka blong Kaljorol Senta long wanwan aelan, we sipos oli no bin "
+"givhan, bambae projek ia bae i no bin save tek ples."
+
 
 #: vanuatuvoices/templates/credits.mako:48
 msgid "also provided the Bislama translations for this website"
@@ -181,27 +187,27 @@ msgstr "Ol Daonlod"
 
 #: vanuatuvoices/templates/download.mako:8
 msgid "Vanuatu Voices serves the latest"
-msgstr ""
+msgstr "Ol Voes blong Vanuatu i givim niufala"
 
 #: vanuatuvoices/templates/download.mako:9
 msgid "released version"
-msgstr ""
+msgstr "vesen we oli rilisim"
 
 #: vanuatuvoices/templates/download.mako:10
 msgid "of data curated at"
-msgstr ""
+msgstr "blong data we oli okanaesem long"
 
 #: vanuatuvoices/templates/download.mako:12
 msgid "All released version are accessible via"
-msgstr ""
+msgstr "Evri vesen we oli rilisim i stap long"
 
 #: vanuatuvoices/templates/download.mako:17
 msgid "on ZENODO as well"
-msgstr ""
+msgstr "long ZENONO tu"
 
 #: vanuatuvoices/templates/dataset/detail_html.mako:18
 msgid "Welcome to"
-msgstr ""
+msgstr "Welkam long"
 
 #: vanuatuvoices/templates/dataset/detail_html.mako:21
 msgid ""
@@ -210,4 +216,8 @@ msgid ""
 "exhibit the extensive variation and unparalleled diversity of the Vanuatu"
 " languages."
 msgstr ""
-
+"Ol Voes blong Vanuatu i stap soem ol praemeri rikoding we oli transkraebem"
+"long fonetik alfabet. Ol rikoding ia oli mekem long plante villij long ol "
+"difdifren aelan blong dokumentem mo soem bigfala difrens we i stap bitwin "
+"ol lanwis blong Vanuatu mo bigfala daevesiti long ol lanwis ia we i nogat "
+"long eni narafala ples."
