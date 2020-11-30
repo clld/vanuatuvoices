@@ -160,7 +160,7 @@ msgstr "Tingting bihaen long saet ia i kamaot folem Sound Comparisons blong Paul
 
 #: vanuatuvoices/templates/credits.mako:15
 msgid "The following people contributed to the Vanuatu Voices dataset"
-msgstr ""
+msgstr "Olketa man ia oli bin kontribyut long dataset blong ol Voes blong Vanuatu"
 
 #: vanuatuvoices/templates/credits.mako:19
 msgid ""
@@ -179,7 +179,7 @@ msgstr ""
 
 #: vanuatuvoices/templates/credits.mako:48
 msgid "also provided the Bislama translations for this website"
-msgstr ""
+msgstr "tu i mekem ol Bislama transleisen blong websaet ia"
 
 #: vanuatuvoices/templates/download.mako:4
 msgid "Downloads"
