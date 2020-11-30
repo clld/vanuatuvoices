@@ -52,7 +52,7 @@ msgstr "Kontak"
 
 #: vanuatuvoices/__init__.py:22
 msgid "Credits"
-msgstr ""
+msgstr "Ol Kredit"
 
 #: vanuatuvoices/__init__.py:23
 msgid "Legal"
