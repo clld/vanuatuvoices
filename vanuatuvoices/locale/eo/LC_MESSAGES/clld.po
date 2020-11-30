@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-11-23 16:00+0100\n"
+"POT-Creation-Date: 2020-11-30 09:47+0100\n"
 "PO-Revision-Date: 2020-11-20 20:00+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: eo\n"
@@ -27,6 +27,8 @@ msgid "Parameters"
 msgstr "Ol wod"
 
 #: vanuatuvoices/__init__.py:17 vanuatuvoices/datatables.py:65
+#: vanuatuvoices/templates/language/detail_html.mako:4
+#: vanuatuvoices/templates/language/detail_html.mako:6
 msgid "Language"
 msgstr "Lanvis"
 
@@ -49,74 +51,78 @@ msgid "Contact"
 msgstr "Kontak"
 
 #: vanuatuvoices/__init__.py:22
+msgid "Credits"
+msgstr ""
+
+#: vanuatuvoices/__init__.py:23
 msgid "Legal"
 msgstr "Likol"
 
-#: vanuatuvoices/__init__.py:23
+#: vanuatuvoices/__init__.py:24
 msgid "Home"
 msgstr "Hom"
 
-#: vanuatuvoices/__init__.py:24
+#: vanuatuvoices/__init__.py:25
 msgid "You can contact us via email at"
 msgstr "Yu save kontaktem mifala long imel ia"
 
-#: vanuatuvoices/__init__.py:27
+#: vanuatuvoices/__init__.py:28
 msgid "Icon size"
 msgstr "Saes blong aekon"
 
-#: vanuatuvoices/__init__.py:28
+#: vanuatuvoices/__init__.py:29
 msgid "Show/hide Labels"
 msgstr "Soem/haedem ol Lebol"
 
-#: vanuatuvoices/__init__.py:31
+#: vanuatuvoices/__init__.py:32
 msgid "Next"
 msgstr "nekis"
 
-#: vanuatuvoices/__init__.py:32
+#: vanuatuvoices/__init__.py:33
 msgid "Previous"
 msgstr "we i kam bifo"
 
-#: vanuatuvoices/__init__.py:33
+#: vanuatuvoices/__init__.py:34
 msgid "First"
 msgstr "Feswan"
 
-#: vanuatuvoices/__init__.py:34
+#: vanuatuvoices/__init__.py:35
 msgid "Last"
 msgstr "Laswan"
 
-#: vanuatuvoices/__init__.py:35
+#: vanuatuvoices/__init__.py:36
 msgid "No data available in table"
 msgstr "I nogat data i stap long tebol"
 
-#: vanuatuvoices/__init__.py:36
+#: vanuatuvoices/__init__.py:37
 msgid "Showing _START_ to _END_ of _TOTAL_ entries"
 msgstr "Shoem _START_ kasem _END_ blong ol _TOTAL_ infomeisen we wan man i entarem"
 
-#: vanuatuvoices/__init__.py:37
+#: vanuatuvoices/__init__.py:38
 msgid "Showing 0 to 0 of 0 entries"
 msgstr "Shoem 0 kasem 0 blong ol infomeisen we wan man i entarem"
 
-#: vanuatuvoices/__init__.py:38
+#: vanuatuvoices/__init__.py:39
 msgid "(filtered from _MAX_ total entries)"
 msgstr "(karemaot long _MAX_ namba blong ol infomeisen we wan man i entarem)"
 
-#: vanuatuvoices/__init__.py:39
+#: vanuatuvoices/__init__.py:40
 msgid "Show _MENU_ entries"
 msgstr "Soem _MENU_ ol infomeisen we wan man i entarem"
 
-#: vanuatuvoices/__init__.py:40
+#: vanuatuvoices/__init__.py:41
 msgid "Loading..."
 msgstr "I stap gohed..."
 
-#: vanuatuvoices/__init__.py:41
+#: vanuatuvoices/__init__.py:42
 msgid "Processing..."
 msgstr "I stap gohed..."
 
-#: vanuatuvoices/__init__.py:42
+#: vanuatuvoices/__init__.py:43
 msgid "Search:"
 msgstr "Lukaotem:"
 
-#: vanuatuvoices/__init__.py:43
+#: vanuatuvoices/__init__.py:44
 msgid "No matching records found"
 msgstr "Oli no faenem rikod we i semak"
 
@@ -136,12 +142,37 @@ msgstr ""
 msgid "Word"
 msgstr "Wod"
 
-#: vanuatuvoices/datatables.py:87
+#: vanuatuvoices/datatables.py:87 vanuatuvoices/templates/credits.mako:26
 msgid "Name"
 msgstr "Nam"
 
-#: vanuatuvoices/datatables.py:88
+#: vanuatuvoices/datatables.py:88 vanuatuvoices/templates/credits.mako:27
 msgid "Role"
+msgstr ""
+
+#: vanuatuvoices/templates/credits.mako:3
+msgid "Acknowlegements"
+msgstr ""
+
+#: vanuatuvoices/templates/credits.mako:6
+msgid "This site drew inspiration from Paul Heggarty's"
+msgstr ""
+
+#: vanuatuvoices/templates/credits.mako:15
+msgid "The following people contributed to the Vanuatu Voices dataset"
+msgstr ""
+
+#: vanuatuvoices/templates/credits.mako:19
+msgid ""
+"We wish to thank our many collaborators at the Vanuatu Cultural Centre in"
+" Port Vila, Vanuatu (especially, Director Richard Shing, Kaitip Kami, "
+"Henline Mala, Evelyne Bulegih, Iarawai Philipp, and Edson Willie) as well"
+" as the Cultural Centre fieldworkers on each individual island, without "
+"whom this project would not have been possible."
+msgstr ""
+
+#: vanuatuvoices/templates/credits.mako:48
+msgid "also provided the Bislama translations for this website"
 msgstr ""
 
 #: vanuatuvoices/templates/download.mako:4
@@ -168,15 +199,15 @@ msgstr ""
 msgid "on ZENODO as well"
 msgstr ""
 
-#: vanuatuvoices/templates/dataset/detail_html.mako:9
+#: vanuatuvoices/templates/dataset/detail_html.mako:18
 msgid "Welcome to"
 msgstr ""
 
-#: vanuatuvoices/templates/dataset/detail_html.mako:12
-msgid "Acknowlegements"
-msgstr ""
-
-#: vanuatuvoices/templates/dataset/detail_html.mako:15
-msgid "This site drew inspiration from Paul Heggarty's"
+#: vanuatuvoices/templates/dataset/detail_html.mako:21
+msgid ""
+"Vanuatu Voices presents phonetically-transcribed primary recordings, from"
+" numerous villages throughout different islands, to both document and "
+"exhibit the extensive variation and unparalleled diversity of the Vanuatu"
+" languages."
 msgstr ""
 

@@ -11,10 +11,14 @@
 <blockquote>
     Heggarty, Paul et al. 2019. Sound Comparisons: A new online database and resource for research in phonetic diversity. Proceedings of ICPhS 19, Melbourne, pp. 280-284, see paper for full list of authors.
 </blockquote>
+
+<p>
+    ${_('We wish to thank our many collaborators at the Vanuatu Cultural Centre in Port Vila, Vanuatu (especially, Director Richard Shing, Kaitip Kami, Henline Mala, Evelyne Bulegih, Iarawai Philipp, and Edson Willie) as well as the Cultural Centre fieldworkers on each individual island, without whom this project would not have been possible.')}
+</p>
+
 <p>
     ${_('The following people contributed to the Vanuatu Voices dataset')}:
 </p>
-
 <table class="table table-condensed">
     <thead>
     <tr>

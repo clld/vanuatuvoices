@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vanuatuvoices 0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-11-23 16:00+0100\n"
+"POT-Creation-Date: 2020-11-30 09:47+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,6 +26,8 @@ msgid "Parameters"
 msgstr ""
 
 #: vanuatuvoices/__init__.py:17 vanuatuvoices/datatables.py:65
+#: vanuatuvoices/templates/language/detail_html.mako:4
+#: vanuatuvoices/templates/language/detail_html.mako:6
 msgid "Language"
 msgstr ""
 
@@ -48,74 +50,78 @@ msgid "Contact"
 msgstr ""
 
 #: vanuatuvoices/__init__.py:22
-msgid "Legal"
+msgid "Credits"
 msgstr ""
 
 #: vanuatuvoices/__init__.py:23
-msgid "Home"
+msgid "Legal"
 msgstr ""
 
 #: vanuatuvoices/__init__.py:24
+msgid "Home"
+msgstr ""
+
+#: vanuatuvoices/__init__.py:25
 msgid "You can contact us via email at"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:27
+#: vanuatuvoices/__init__.py:28
 msgid "Icon size"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:28
+#: vanuatuvoices/__init__.py:29
 msgid "Show/hide Labels"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:31
+#: vanuatuvoices/__init__.py:32
 msgid "Next"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:32
+#: vanuatuvoices/__init__.py:33
 msgid "Previous"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:33
+#: vanuatuvoices/__init__.py:34
 msgid "First"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:34
+#: vanuatuvoices/__init__.py:35
 msgid "Last"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:35
+#: vanuatuvoices/__init__.py:36
 msgid "No data available in table"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:36
+#: vanuatuvoices/__init__.py:37
 msgid "Showing _START_ to _END_ of _TOTAL_ entries"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:37
+#: vanuatuvoices/__init__.py:38
 msgid "Showing 0 to 0 of 0 entries"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:38
+#: vanuatuvoices/__init__.py:39
 msgid "(filtered from _MAX_ total entries)"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:39
+#: vanuatuvoices/__init__.py:40
 msgid "Show _MENU_ entries"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:40
+#: vanuatuvoices/__init__.py:41
 msgid "Loading..."
 msgstr ""
 
-#: vanuatuvoices/__init__.py:41
+#: vanuatuvoices/__init__.py:42
 msgid "Processing..."
 msgstr ""
 
-#: vanuatuvoices/__init__.py:42
+#: vanuatuvoices/__init__.py:43
 msgid "Search:"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:43
+#: vanuatuvoices/__init__.py:44
 msgid "No matching records found"
 msgstr ""
 
@@ -135,12 +141,37 @@ msgstr ""
 msgid "Word"
 msgstr ""
 
-#: vanuatuvoices/datatables.py:87
+#: vanuatuvoices/datatables.py:87 vanuatuvoices/templates/credits.mako:26
 msgid "Name"
 msgstr ""
 
-#: vanuatuvoices/datatables.py:88
+#: vanuatuvoices/datatables.py:88 vanuatuvoices/templates/credits.mako:27
 msgid "Role"
+msgstr ""
+
+#: vanuatuvoices/templates/credits.mako:3
+msgid "Acknowlegements"
+msgstr ""
+
+#: vanuatuvoices/templates/credits.mako:6
+msgid "This site drew inspiration from Paul Heggarty's"
+msgstr ""
+
+#: vanuatuvoices/templates/credits.mako:15
+msgid "The following people contributed to the Vanuatu Voices dataset"
+msgstr ""
+
+#: vanuatuvoices/templates/credits.mako:19
+msgid ""
+"We wish to thank our many collaborators at the Vanuatu Cultural Centre in "
+"Port Vila, Vanuatu (especially, Director Richard Shing, Kaitip Kami, Henline "
+"Mala, Evelyne Bulegih, Iarawai Philipp, and Edson Willie) as well as the "
+"Cultural Centre fieldworkers on each individual island, without whom this "
+"project would not have been possible."
+msgstr ""
+
+#: vanuatuvoices/templates/credits.mako:48
+msgid "also provided the Bislama translations for this website"
 msgstr ""
 
 #: vanuatuvoices/templates/download.mako:4
@@ -167,15 +198,14 @@ msgstr ""
 msgid "on ZENODO as well"
 msgstr ""
 
-#: vanuatuvoices/templates/dataset/detail_html.mako:9
+#: vanuatuvoices/templates/dataset/detail_html.mako:18
 msgid "Welcome to"
 msgstr ""
 
-#: vanuatuvoices/templates/dataset/detail_html.mako:12
-msgid "Acknowlegements"
-msgstr ""
-
-#: vanuatuvoices/templates/dataset/detail_html.mako:15
-msgid "This site drew inspiration from Paul Heggarty's"
+#: vanuatuvoices/templates/dataset/detail_html.mako:21
+msgid ""
+"Vanuatu Voices presents phonetically-transcribed primary recordings, from "
+"numerous villages throughout different islands, to both document and exhibit "
+"the extensive variation and unparalleled diversity of the Vanuatu languages."
 msgstr ""
 
