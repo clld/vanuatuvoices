@@ -27,6 +27,8 @@ from clld_glottologfamily_plugin.models import HasFamilyMixin
 class Variety(CustomModelMixin, common.Language, HasFamilyMixin):
     pk = Column(Integer, ForeignKey('language.pk'), primary_key=True)
     glottocode = Column(Unicode)
+    contribution_pk = Column(Integer, ForeignKey('contribution.pk'))
+    contribution = relationship(common.Contribution, backref=backref('variety', uselist=False))
 
 
 @implementer(interfaces.IParameter)

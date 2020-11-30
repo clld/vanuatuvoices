@@ -43,16 +43,11 @@ def main(args):
 
     )
 
-    #
-    # FIXME: turn eah variety into a separate contribution!
-    #
-    contrib = data.add(
-        common.Contribution,
-        None,
-        id='cldf',
-        name=args.cldf.properties.get('dc:title'),
-        description=args.cldf.properties.get('dc:bibliographicCitation'),
-    )
+    form2audio = {}
+    for r in args.cldf.iter_rows('media.csv', 'id', 'formReference'):
+        if r['mimetype'] == 'audio/mpeg':
+            form2audio[r['formReference']] = r
+
     r = get_dataset('vanuatuvoices', ep='lexibank.dataset')
     authors, _ = r.get_creators_and_contributors()
     for ord, author in enumerate(authors):
@@ -66,22 +61,34 @@ def main(args):
             description=author.get('description'),
             jsondata=dict(img=img.name if img.exists() else None),
         )
-        #
-        # FIXME: add roles-per-variety as ContributionContributor.jsondata['roles']
-        #
-        DBSession.add(common.ContributionContributor(contribution=contrib, contributor=c))
     for ord, cid in enumerate(['gray', 'walworth']):
         DBSession.add(common.Editor(
             ord=ord,
             dataset=ds,
             contributor=data['Contributor'][cid]))
 
-    form2audio = {}
-    for r in args.cldf.iter_rows('media.csv', 'id', 'formReference'):
-        if r['mimetype'] == 'audio/mpeg':
-            form2audio[r['formReference']] = r
+    contribs = collections.defaultdict(lambda: collections.defaultdict(list))
+    for c in args.cldf.iter_rows('contributions.csv'):
+        for role in ['phonetic_transcriptions', 'recording', 'sound_editing']:
+            for name in c[role].split(' and '):
+                if name:
+                    cid = slug(HumanName(name).last)
+                    contribs[c['Language_ID']][cid].append(role)
 
     for lang in args.cldf.iter_rows('LanguageTable', 'id', 'glottocode', 'name', 'latitude', 'longitude'):
+        contrib = data.add(
+            common.Contribution,
+            lang['id'],
+            id=lang['id'],
+            name='Wordlist for {}'.format(lang['name']),
+        )
+        if lang['id'] in contribs:
+            for cid, roles in contribs[lang['id']].items():
+                DBSession.add(common.ContributionContributor(
+                    contribution=contrib,
+                    contributor=data['Contributor'][cid],
+                    jsondata=dict(roles=roles),
+                ))
         data.add(
             models.Variety,
             lang['id'],
@@ -91,6 +98,7 @@ def main(args):
             longitude=lang['longitude'],
             glottocode=lang['glottocode'],
             description=lang['LongName'],
+            contribution=contrib,
         )
 
     for rec in bibtex.Database.from_file(args.cldf.bibpath, lowercase=True):
