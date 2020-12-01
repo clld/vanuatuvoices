@@ -5,20 +5,21 @@ from clld.web.maps import ParameterMap, Map
 class LanguagesMap(Map):
     def get_options(self):
         return {
-            'on_init': JSNamespace('VANUATUVOICES').addResizer,
             'max_zoom': 13,
             'base_layer': 'Esri.DeLorme',
             'show_labels': True,
+            'resize_direction': 'e',
         }
 
 
 class ParamMap(ParameterMap):
     def get_options(self):
         return {
-            'on_init': JSNamespace('VANUATUVOICES').addResizerAndAudioplayer,
+            'with_audioplayer': True,
             'max_zoom': 13,
             'base_layer': 'Esri.DeLorme',
             'show_labels': True,
+            'resize_direction': 'e',
         }
 
 
