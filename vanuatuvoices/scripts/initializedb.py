@@ -32,6 +32,7 @@ def main(args):
         id=vanuatuvoices.__name__,
         name='Vanuatu Voices',
         domain='vanuatuvoices.clld.org',
+        contact="vanuatuvoices@shh.mpg.de",
         publisher_name="Max Planck Institute for the Science of Human History",
         publisher_place="Jena",
         publisher_url="https://www.shh.mpg.de",
