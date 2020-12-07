@@ -7,9 +7,7 @@ from clld.web.datatables.parameter import Parameters
 from clld.web.util.htmllib import HTML
 from clld.web.util import concepticon
 from clld.db.models import common
-
-from clld_glottologfamily_plugin.models import Family
-from clld_glottologfamily_plugin.datatables import FamilyCol
+from clld.db.util import get_distinct_values
 
 from vanuatuvoices import models
 
@@ -20,13 +18,10 @@ class LongTableMixin:
 
 
 class Languages(LongTableMixin, datatables.Languages):
-    def base_query(self, query):
-        return query.outerjoin(Family).options(joinedload(models.Variety.family)).distinct()
-
     def col_defs(self):
         return [
             LinkCol(self, 'name'),
-            FamilyCol(self, 'Family', models.Variety),
+            Col(self, 'Island', model_col=models.Variety.island, choices=get_distinct_values(models.Variety.island)),
             Col(self,
                 'latitude',
                 sDescription='<small>The geographic latitude</small>'),

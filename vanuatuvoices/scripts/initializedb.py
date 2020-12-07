@@ -3,7 +3,6 @@ import collections
 
 from pycldf import Sources
 from clldutils.misc import nfilter
-from clldutils.color import qualitative_colors
 from clldutils.misc import slug
 from clldutils import licenses
 from clld.cliutil import Data, bibtex2source
@@ -12,7 +11,6 @@ from clld.db.models import common
 from clld.lib import bibtex
 from nameparser import HumanName
 
-from clld_glottologfamily_plugin.util import load_families
 from cldfbench import get_dataset
 
 import vanuatuvoices
@@ -20,8 +18,6 @@ from vanuatuvoices import models
 
 
 def main(args):
-    assert args.glottolog, 'The --glottolog option is required!'
-
     license = licenses.find(args.cldf.properties['dc:license'])
     assert license and license.id.startswith('CC-')
 
@@ -108,6 +104,7 @@ def main(args):
             glottocode=lang['glottocode'],
             description=lang['LongName'],
             contribution=contrib,
+            island=lang['Island'],
         )
 
     for rec in bibtex.Database.from_file(args.cldf.bibpath, lowercase=True):
@@ -156,13 +153,6 @@ def main(args):
             source=data['Source'][sid],
             description='; '.join(nfilter(pages))
         ))
-    load_families(
-        Data(),
-        [(l.glottocode, l) for l in data['Variety'].values()],
-        glottolog_repos=args.glottolog,
-        isolates_icon='tcccccc',
-        strict=False,
-    )
 
 
 def prime_cache(args):
