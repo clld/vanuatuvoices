@@ -62,7 +62,15 @@ def main(args):
             description=author.get('description'),
             jsondata=dict(img=img.name if img.exists() else None),
         )
-    for ord, cid in enumerate(['gray', 'walworth']):
+    data.add(
+        common.Contributor,
+            'forkel',
+            id='forkel',
+            name='Robert Forkel',
+            description='Data curation and website implementation',
+            jsondata=dict(img=None),
+    )
+    for ord, cid in enumerate(['walworth', 'forkel', 'gray']):
         DBSession.add(common.Editor(
             ord=ord,
             dataset=ds,

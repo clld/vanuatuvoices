@@ -20,4 +20,12 @@
     <p class="lead">
         ${_('Vanuatu Voices presents phonetically-transcribed primary recordings, from numerous villages throughout different islands, to both document and exhibit the extensive variation and unparalleled diversity of the Vanuatu languages.')}
     </p>
+
+    <p>
+        ${_('Cite the Vanuatu Voices dataset as')}
+    </p>
+    <blockquote>
+        Aviva Shimelman, Paul Heggarty, Tom Ennever, Iveth Rodriguez, Tom Fitzpatrick, Marie-France Duhamel, Lana Takau, Mary Walworth, Giovanni Abete, Daria Dërmaku, Laura Wägerle, Kaitip W. Kami, Heidi Colleran, Russell Gray and Hans-Jörg Bibiko. (2020). Vanuatu Voices (Version v1.0) [Data set]. Zenodo. http://doi.org/10.5281/zenodo.4309141
+        <a href="https://doi.org/10.5281/zenodo.4309141"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.4309141.svg" alt="DOI"></a>
+    </blockquote>
 </div>
