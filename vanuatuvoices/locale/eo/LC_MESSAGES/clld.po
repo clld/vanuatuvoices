@@ -133,7 +133,7 @@ msgstr "Nam"
 
 #: vanuatuvoices/datatables.py:26
 msgid "Island"
-msgstr ""
+msgstr "Aelan"
 
 #: vanuatuvoices/datatables.py:54 vanuatuvoices/datatables.py:99
 msgid "English"
