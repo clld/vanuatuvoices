@@ -20,8 +20,12 @@ class LongTableMixin:
 class Languages(LongTableMixin, datatables.Languages):
     def col_defs(self):
         return [
-            LinkCol(self, 'name'),
-            Col(self, 'Island', model_col=models.Variety.island, choices=get_distinct_values(models.Variety.island)),
+            LinkCol(self, 'name', sTitle=self.req._('Name')),
+            Col(self,
+                'Island',
+                sTitle=self.req._('Island'),
+                model_col=models.Variety.island,
+                choices=get_distinct_values(models.Variety.island)),
             Col(self,
                 'latitude',
                 sDescription='<small>The geographic latitude</small>'),

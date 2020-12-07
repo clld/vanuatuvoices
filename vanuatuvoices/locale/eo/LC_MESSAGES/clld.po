@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-11-30 09:47+0100\n"
+"POT-Creation-Date: 2020-12-07 12:46+0100\n"
 "PO-Revision-Date: 2020-11-20 20:00+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: eo\n"
@@ -18,135 +18,140 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.0\n"
 
-#: vanuatuvoices/__init__.py:15
+#: vanuatuvoices/__init__.py:8
 msgid "Languages"
 msgstr "Ol lanwis"
 
-#: vanuatuvoices/__init__.py:16
+#: vanuatuvoices/__init__.py:9
 msgid "Parameters"
 msgstr "Ol wod"
 
-#: vanuatuvoices/__init__.py:17 vanuatuvoices/datatables.py:65
+#: vanuatuvoices/__init__.py:10 vanuatuvoices/datatables.py:64
 #: vanuatuvoices/templates/language/detail_html.mako:4
 #: vanuatuvoices/templates/language/detail_html.mako:6
 msgid "Language"
 msgstr "Lanwis"
 
-#: vanuatuvoices/__init__.py:18
+#: vanuatuvoices/__init__.py:11
 #: vanuatuvoices/templates/parameter/detail_html.mako:4
 #: vanuatuvoices/templates/parameter/detail_html.mako:8
 msgid "Parameter"
 msgstr "Wod"
 
-#: vanuatuvoices/__init__.py:19
+#: vanuatuvoices/__init__.py:12
 msgid "Contributors"
 msgstr "Ol kontributa"
 
-#: vanuatuvoices/__init__.py:20
+#: vanuatuvoices/__init__.py:13
 msgid "Download"
 msgstr "Daonlodem"
 
-#: vanuatuvoices/__init__.py:21
+#: vanuatuvoices/__init__.py:14
 msgid "Contact"
 msgstr "Kontak"
 
-#: vanuatuvoices/__init__.py:22
+#: vanuatuvoices/__init__.py:15
 msgid "Credits"
 msgstr "Ol Kredit"
 
-#: vanuatuvoices/__init__.py:23
+#: vanuatuvoices/__init__.py:16
 msgid "Legal"
 msgstr "Likol"
 
-#: vanuatuvoices/__init__.py:24
+#: vanuatuvoices/__init__.py:17
 msgid "Home"
 msgstr "Hom"
 
-#: vanuatuvoices/__init__.py:25
+#: vanuatuvoices/__init__.py:18
 msgid "You can contact us via email at"
 msgstr "Yu save kontaktem mifala long imel ia"
 
-#: vanuatuvoices/__init__.py:28
+#: vanuatuvoices/__init__.py:21
 msgid "Icon size"
 msgstr "Saes blong aekon"
 
-#: vanuatuvoices/__init__.py:29
+#: vanuatuvoices/__init__.py:22
 msgid "Show/hide Labels"
 msgstr "Soem/haedem ol Lebol"
 
-#: vanuatuvoices/__init__.py:32
+#: vanuatuvoices/__init__.py:25
 msgid "Next"
 msgstr "nekis"
 
-#: vanuatuvoices/__init__.py:33
+#: vanuatuvoices/__init__.py:26
 msgid "Previous"
 msgstr "we i kam bifo"
 
-#: vanuatuvoices/__init__.py:34
+#: vanuatuvoices/__init__.py:27
 msgid "First"
 msgstr "Feswan"
 
-#: vanuatuvoices/__init__.py:35
+#: vanuatuvoices/__init__.py:28
 msgid "Last"
 msgstr "Laswan"
 
-#: vanuatuvoices/__init__.py:36
+#: vanuatuvoices/__init__.py:29
 msgid "No data available in table"
 msgstr "I nogat data i stap long tebol"
 
-#: vanuatuvoices/__init__.py:37
+#: vanuatuvoices/__init__.py:30
 msgid "Showing _START_ to _END_ of _TOTAL_ entries"
 msgstr "Shoem _START_ kasem _END_ blong ol _TOTAL_ infomeisen we wan man i entarem"
 
-#: vanuatuvoices/__init__.py:38
+#: vanuatuvoices/__init__.py:31
 msgid "Showing 0 to 0 of 0 entries"
 msgstr "Shoem 0 kasem 0 blong ol infomeisen we wan man i entarem"
 
-#: vanuatuvoices/__init__.py:39
+#: vanuatuvoices/__init__.py:32
 msgid "(filtered from _MAX_ total entries)"
 msgstr "(karemaot long _MAX_ namba blong ol infomeisen we wan man i entarem)"
 
-#: vanuatuvoices/__init__.py:40
+#: vanuatuvoices/__init__.py:33
 msgid "Show _MENU_ entries"
 msgstr "Soem _MENU_ ol infomeisen we wan man i entarem"
 
-#: vanuatuvoices/__init__.py:41
+#: vanuatuvoices/__init__.py:34
 msgid "Loading..."
 msgstr "I stap gohed..."
 
-#: vanuatuvoices/__init__.py:42
+#: vanuatuvoices/__init__.py:35
 msgid "Processing..."
 msgstr "I stap gohed..."
 
-#: vanuatuvoices/__init__.py:43
+#: vanuatuvoices/__init__.py:36
 msgid "Search:"
 msgstr "Lukaotem:"
 
-#: vanuatuvoices/__init__.py:44
+#: vanuatuvoices/__init__.py:37
 msgid "No matching records found"
 msgstr "Oli no faenem rikod we i semak"
 
-#: vanuatuvoices/datatables.py:55 vanuatuvoices/datatables.py:100
-msgid "English"
-msgstr "Inglis"
-
-#: vanuatuvoices/datatables.py:58 vanuatuvoices/datatables.py:101
-msgid "Bislama"
-msgstr ""
-
-#: vanuatuvoices/datatables.py:68
-msgid "Location"
-msgstr "Lokeisen"
-
-#: vanuatuvoices/datatables.py:75
-msgid "Word"
-msgstr "Wod"
-
-#: vanuatuvoices/datatables.py:87 vanuatuvoices/templates/credits.mako:26
+#: vanuatuvoices/datatables.py:23 vanuatuvoices/datatables.py:86
+#: vanuatuvoices/templates/credits.mako:26
 msgid "Name"
 msgstr "Nam"
 
-#: vanuatuvoices/datatables.py:88 vanuatuvoices/templates/credits.mako:27
+#: vanuatuvoices/datatables.py:26
+msgid "Island"
+msgstr ""
+
+#: vanuatuvoices/datatables.py:54 vanuatuvoices/datatables.py:99
+msgid "English"
+msgstr "Inglis"
+
+#: vanuatuvoices/datatables.py:57 vanuatuvoices/datatables.py:100
+msgid "Bislama"
+msgstr ""
+
+#: vanuatuvoices/datatables.py:67
+msgid "Location"
+msgstr "Lokeisen"
+
+#: vanuatuvoices/datatables.py:74
+msgid "Word"
+msgstr "Wod"
+
+#: vanuatuvoices/datatables.py:87 vanuatuvoices/templates/credits.mako:27
 msgid "Role"
 msgstr "Wok"
 
@@ -156,13 +161,11 @@ msgstr "Ol tankio toktok"
 
 #: vanuatuvoices/templates/credits.mako:6
 msgid "This site drew inspiration from Paul Heggarty's"
-msgstr "Tingting bihaen long saet ia i kamaot folem Sound Comparisons blong Paul Heggarty "
+msgstr ""
+"Tingting bihaen long saet ia i kamaot folem Sound Comparisons blong Paul "
+"Heggarty "
 
-#: vanuatuvoices/templates/credits.mako:15
-msgid "The following people contributed to the Vanuatu Voices dataset"
-msgstr "Olketa man ia oli bin kontribyut long dataset blong ol Voes blong Vanuatu"
-
-#: vanuatuvoices/templates/credits.mako:19
+#: vanuatuvoices/templates/credits.mako:16
 msgid ""
 "We wish to thank our many collaborators at the Vanuatu Cultural Centre in"
 " Port Vila, Vanuatu (especially, Director Richard Shing, Kaitip Kami, "
@@ -171,11 +174,14 @@ msgid ""
 "whom this project would not have been possible."
 msgstr ""
 "Mifala i wantem talem tankio long plante man long Vanuatu Kaljorol Senta "
-"long Port Vila we oli bin givhan long mifala (espeseli, Daerekta Richard Shing,"
-" Kaitip Kami, Henline Mala, Evelyn Buleigih, Iarawai Philipp mo Edson Willie) "
-"wetem ol filwoka blong Kaljorol Senta long wanwan aelan, we sipos oli no bin "
-"givhan, bambae projek ia bae i no bin save tek ples."
+"long Port Vila we oli bin givhan long mifala (espeseli, Daerekta Richard "
+"Shing, Kaitip Kami, Henline Mala, Evelyn Buleigih, Iarawai Philipp mo "
+"Edson Willie) wetem ol filwoka blong Kaljorol Senta long wanwan aelan, we"
+" sipos oli no bin givhan, bambae projek ia bae i no bin save tek ples."
 
+#: vanuatuvoices/templates/credits.mako:20
+msgid "The following people contributed to the Vanuatu Voices dataset"
+msgstr "Olketa man ia oli bin kontribyut long dataset blong ol Voes blong Vanuatu"
 
 #: vanuatuvoices/templates/credits.mako:48
 msgid "also provided the Bislama translations for this website"
@@ -216,8 +222,13 @@ msgid ""
 "exhibit the extensive variation and unparalleled diversity of the Vanuatu"
 " languages."
 msgstr ""
-"Ol Voes blong Vanuatu i stap soem ol praemeri rikoding we oli transkraebem "
-"long fonetik alfabet. Ol rikoding ia oli mekem long plante villij long ol "
-"difdifren aelan blong dokumentem mo soem bigfala difrens we i stap bitwin "
-"ol lanwis blong Vanuatu mo bigfala daevesiti long ol lanwis ia we i nogat "
-"long eni narafala ples."
+"Ol Voes blong Vanuatu i stap soem ol praemeri rikoding we oli "
+"transkraebem long fonetik alfabet. Ol rikoding ia oli mekem long plante "
+"villij long ol difdifren aelan blong dokumentem mo soem bigfala difrens "
+"we i stap bitwin ol lanwis blong Vanuatu mo bigfala daevesiti long ol "
+"lanwis ia we i nogat long eni narafala ples."
+
+#: vanuatuvoices/templates/dataset/detail_html.mako:25
+msgid "Cite the Vanuatu Voices dataset as"
+msgstr ""
+
