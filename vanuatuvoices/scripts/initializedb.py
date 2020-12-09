@@ -17,7 +17,7 @@ import vanuatuvoices
 from vanuatuvoices import models
 
 
-def main(args):
+def main(args):  # pragma: no cover
     license = licenses.find(args.cldf.properties['dc:license'])
     assert license and license.id.startswith('CC-')
 

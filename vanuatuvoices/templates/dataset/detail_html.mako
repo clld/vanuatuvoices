@@ -25,7 +25,7 @@
         ${_('Cite the Vanuatu Voices dataset as')}
     </p>
     <blockquote>
-        Aviva Shimelman, Paul Heggarty, Tom Ennever, Iveth Rodriguez, Tom Fitzpatrick, Marie-France Duhamel, Lana Takau, Mary Walworth, Giovanni Abete, Daria Dërmaku, Laura Wägerle, Kaitip W. Kami, Heidi Colleran, Russell Gray and Hans-Jörg Bibiko. (2020). Vanuatu Voices (Version v1.0) [Data set]. Zenodo. http://doi.org/10.5281/zenodo.4309141
+        Aviva Shimelman, Mary Walworth, Lana Takau, Tom Ennever, Iveth Rodriguez, Tom Fitzpatrick, Marie-France Duhamel, Giovanni Abete, Daria Dërmaku, Laura Wägerle, Heidi Colleran, Paul Heggarty, Kaitip W. Kami, Hans-Jörg Bibiko and Russell Gray. (2020). Vanuatu Voices (Version v1.0) [Data set]. Zenodo. http://doi.org/10.5281/zenodo.4309141
         <a href="https://doi.org/10.5281/zenodo.4309141"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.4309141.svg" alt="DOI"></a>
     </blockquote>
 </div>
