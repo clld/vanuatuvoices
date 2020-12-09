@@ -21,7 +21,7 @@ msgstr ""
 
 #: vanuatuvoices/__init__.py:8
 msgid "Languages"
-msgstr ""
+msgstr "Doculects"
 
 #: vanuatuvoices/__init__.py:9
 msgid "Parameters"
@@ -31,7 +31,7 @@ msgstr "Concepts"
 #: vanuatuvoices/templates/language/detail_html.mako:4
 #: vanuatuvoices/templates/language/detail_html.mako:6
 msgid "Language"
-msgstr ""
+msgstr "Doculect"
 
 #: vanuatuvoices/__init__.py:11
 #: vanuatuvoices/templates/parameter/detail_html.mako:4
