@@ -230,5 +230,5 @@ msgstr ""
 
 #: vanuatuvoices/templates/dataset/detail_html.mako:25
 msgid "Cite the Vanuatu Voices dataset as"
-msgstr ""
+msgstr "Taem yu yusum o tekem wan infomeisen long ol Vois blong Vanuatu dataset, yu referensem olsem"
 
