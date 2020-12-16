@@ -122,6 +122,7 @@ def main(args):  # pragma: no cover
             concepticon_id=param['concepticonReference'],
             concepticon_gloss=param['Concepticon_Gloss'],
         )
+
     for form in args.cldf.iter_rows('FormTable', 'id', 'form', 'languageReference', 'parameterReference', 'source'):
         vsid = (form['languageReference'], form['parameterReference'])
         vs = data['ValueSet'].get(vsid)
@@ -132,7 +133,7 @@ def main(args):  # pragma: no cover
                 id='-'.join(vsid),
                 language=data['Variety'][form['languageReference']],
                 parameter=data['Concept'][form['parameterReference']],
-                contribution=contrib,
+                contribution=data['Contribution'][form['languageReference']],
             )
         for ref in form.get('source', []):
             sid, pages = Sources.parse(ref)
