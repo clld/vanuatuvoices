@@ -47,6 +47,18 @@ class AudioCol(Col):
 
 
 class Words(LongTableMixin, Values):
+    def base_query(self, query):
+        if not any([self.language, self.parameter, self.contribution]):
+            return query\
+                .join(common.ValueSet)\
+                .join(common.Parameter)\
+                .join(common.Language)\
+                .options(
+                joinedload(common.Value.valueset).joinedload(common.ValueSet.parameter),
+                joinedload(common.Value.valueset).joinedload(common.ValueSet.language))
+        else:
+            return Values.base_query(self, query)
+
     def col_defs(self):
         res = []
         if self.language:
@@ -72,10 +84,21 @@ class Words(LongTableMixin, Values):
             # FIXME: link to map!
         res.extend([
             Col(self, 'name', sTitle=self.req._('Word')),
-            AudioCol(self, '#')
+            LinkCol(self, 'language', sTitle=self.req._('Language'),
+                    model_col=common.Language.name,
+                    get_object=lambda v: v.valueset.language),
+            LinkCol(self, 'gloss_en', sTitle=self.req._('English'),
+                    model_col=common.Parameter.name,
+                    get_object=lambda v: v.valueset.parameter),
+            Col(self,
+                'gloss_bi',
+                sTitle=self.req._('Bislama'),
+                get_object=lambda v: v.valueset.parameter,
+                model_col=common.Parameter.description,
+            ),
+            AudioCol(self, '#', bSearchable=False, bSortable=False)
         ])
         return res
-
 
 
 _ = lambda s: s
