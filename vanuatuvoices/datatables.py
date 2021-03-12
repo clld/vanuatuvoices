@@ -4,10 +4,10 @@ from clld.web.datatables.base import LinkCol, Col, LinkToMapCol
 from clld.web.datatables.contributor import Contributors
 from clld.web.datatables.value import Values
 from clld.web.datatables.parameter import Parameters
-from clld.web.util.htmllib import HTML
 from clld.web.util import concepticon
 from clld.db.models import common
 from clld.db.util import get_distinct_values
+from clld_audio_plugin.datatables import AudioCol
 
 from vanuatuvoices import models
 
@@ -34,16 +34,6 @@ class Languages(LongTableMixin, datatables.Languages):
                 sDescription='<small>The geographic longitude</small>'),
             LinkToMapCol(self, 'm'),
         ]
-
-
-class AudioCol(Col):
-    def format(self, item):
-        if item.jsondatadict['audio']:
-            return HTML.audio(
-                HTML.source(src=item.jsondata['audio'], type="audio/mpeg"),
-                controls="controls"
-            )
-        return ''
 
 
 class Words(LongTableMixin, Values):

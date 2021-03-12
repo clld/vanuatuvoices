@@ -3,6 +3,7 @@ from pyramid.config import Configurator
 
 # we must make sure custom models are known at database initialization!
 from vanuatuvoices import models
+from clld_audio_plugin import models as audiomodels
 
 _ = lambda s: s
 _('Languages')
@@ -45,5 +46,5 @@ def main(global_config, **settings):
     config.include('clld.web.app')
 
     config.include('clldmpg')
-
+    config.include('clld_audio_plugin')
     return config.make_wsgi_app()

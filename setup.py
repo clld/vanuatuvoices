@@ -22,6 +22,7 @@ setup(
         'clld>=7.4.1',  # >=7.0
         'cldfbench',
         'clld-glottologfamily-plugin>=4.0',
+        'clld-audio-plugin',
         'pyglottolog',
         'clldmpg',
 
@@ -29,7 +30,6 @@ setup(
 extras_require={
         'dev': ['flake8', 'waitress', 'psycopg2'],
         'test': [
-            'mock',
             'pytest>=5.4',
             'pytest-clld',
             'pytest-mock',

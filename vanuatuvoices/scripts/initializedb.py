@@ -10,8 +10,9 @@ from clld.db.meta import DBSession
 from clld.db.models import common
 from clld.lib import bibtex
 from nameparser import HumanName
-
 from cldfbench import get_dataset
+from clld_audio_plugin.models import Counterpart
+from clld_audio_plugin import util as audioutil
 
 import vanuatuvoices
 from vanuatuvoices import models
@@ -40,10 +41,7 @@ def main(args):  # pragma: no cover
 
     )
 
-    form2audio = {}
-    for r in args.cldf.iter_rows('media.csv', 'id', 'formReference'):
-        if r['mimetype'] == 'audio/mpeg':
-            form2audio[r['formReference']] = r
+    form2audio = audioutil.form2audio(args.cldf, 'audio/mpeg')
 
     r = get_dataset('vanuatuvoices', ep='lexibank.dataset')
     authors, _ = r.get_creators_and_contributors()
@@ -139,13 +137,12 @@ def main(args):  # pragma: no cover
             sid, pages = Sources.parse(ref)
             refs[(vsid, sid)].append(pages)
         data.add(
-            common.Value,
+            Counterpart,
             form['id'],
             id=form['id'],
             name=form['form'],
             valueset=vs,
-            jsondata=dict(audio=args.cldf.get_row_url('media.csv', form2audio[form['id']])
-            if form['id'] in form2audio else None),
+            audio=form2audio.get(form['id'])
         )
 
     for (vsid, sid), pages in refs.items():

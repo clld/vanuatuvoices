@@ -1,5 +1,4 @@
-from clld.web.util.helpers import JSNamespace
-from clld.web.maps import ParameterMap, Map
+from clld.web.maps import Map
 
 
 class LanguagesMap(Map):
@@ -12,17 +11,5 @@ class LanguagesMap(Map):
         }
 
 
-class ParamMap(ParameterMap):
-    def get_options(self):
-        return {
-            'with_audioplayer': True,
-            'max_zoom': 13,
-            'base_layer': 'Esri.DeLorme',
-            'show_labels': True,
-            'resize_direction': 's',
-        }
-
-
 def includeme(config):
     config.register_map('languages', LanguagesMap)
-    config.register_map('parameter', ParamMap)
