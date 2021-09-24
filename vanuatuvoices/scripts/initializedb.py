@@ -30,9 +30,9 @@ def main(args):  # pragma: no cover
         name='Vanuatu Voices',
         domain='vanuatuvoices.clld.org',
         contact="vanuatuvoices@shh.mpg.de",
-        publisher_name="Max Planck Institute for the Science of Human History",
-        publisher_place="Jena",
-        publisher_url="https://www.shh.mpg.de",
+        publisher_name="Max Planck Institute for Evolutionary Anthropology",
+        publisher_place="Leipzig",
+        publisher_url="https://www.eva.mpg.de",
         license=license.url,
         jsondata={
             'license_icon': '{}.png'.format(
