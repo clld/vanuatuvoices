@@ -13,6 +13,7 @@ from nameparser import HumanName
 from cldfbench import get_dataset
 from clld_audio_plugin.models import Counterpart
 from clld_audio_plugin import util as audioutil
+from pyclts import CLTS
 
 import vanuatuvoices
 from vanuatuvoices import models
@@ -21,7 +22,7 @@ from vanuatuvoices import models
 def main(args):  # pragma: no cover
     license = licenses.find(args.cldf.properties['dc:license'])
     assert license and license.id.startswith('CC-')
-
+    clts = CLTS(input('Path to cldf-clts/clts:') or '../../cldf-clts/clts-data')
     data = Data()
     ds = data.add(
         common.Dataset,
@@ -120,8 +121,9 @@ def main(args):  # pragma: no cover
             concepticon_id=param['concepticonReference'],
             concepticon_gloss=param['Concepticon_Gloss'],
         )
-
+    inventories = collections.defaultdict(collections.Counter)
     for form in args.cldf.iter_rows('FormTable', 'id', 'form', 'languageReference', 'parameterReference', 'source'):
+        inventories[form['languageReference']].update(form['Segments'])
         vsid = (form['languageReference'], form['parameterReference'])
         vs = data['ValueSet'].get(vsid)
         if not vs:
@@ -151,6 +153,11 @@ def main(args):  # pragma: no cover
             source=data['Source'][sid],
             description='; '.join(nfilter(pages))
         ))
+
+    for lid, inv in inventories.items():
+        inv = [clts.bipa[c] for c in inv]
+        data['Variety'][lid].update_jsondata(
+            inventory=[(str(c), c.name) for c in inv if getattr(c, 'name', None)])
 
 
 def prime_cache(args):
