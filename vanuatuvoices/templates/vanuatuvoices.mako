@@ -36,12 +36,12 @@
   <div class="pull-right">
     <ul class="nav">
       <li>
-        <a style="padding: 0px !important;" href="${req.purl.query_param('__locale__', 'en')}">
+        <a style="padding: 0px !important;" href="${u.localize_url(req, 'en')}">
           <img width="34" src="${req.static_url('vanuatuvoices:static/gb.svg')}"/>
         </a>
       </li>
       <li>
-        <a style="margin-left: 10px; padding: 0px !important;" href="${req.purl.query_param('__locale__', 'eo')}">
+        <a style="margin-left: 10px; padding: 0px !important;" href="${u.localize_url(req, 'eo')}">
           <img width="30" src="${req.static_url('vanuatuvoices:static/vu.svg')}"/>
         </a>
        </li>
