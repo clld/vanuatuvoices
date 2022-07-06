@@ -1,4 +1,5 @@
 from sqlalchemy.orm import joinedload
+from sqlalchemy import or_
 from clld.web import datatables
 from clld.web.datatables.base import LinkCol, Col, LinkToMapCol
 from clld.web.datatables.contributor import Contributors
@@ -6,10 +7,13 @@ from clld.web.datatables.value import Values
 from clld.web.datatables.parameter import Parameters
 from clld.web.util import concepticon
 from clld.db.models import common
-from clld.db.util import get_distinct_values
+from clld.db.util import get_distinct_values, icontains
 from clld_audio_plugin.datatables import AudioCol
 
 from vanuatuvoices import models
+
+
+_ = lambda s: s
 
 
 class LongTableMixin:
@@ -44,54 +48,46 @@ class Words(LongTableMixin, Values):
                 .join(common.Parameter)\
                 .join(common.Language)\
                 .options(
-                joinedload(common.Value.valueset).joinedload(common.ValueSet.parameter),
-                joinedload(common.Value.valueset).joinedload(common.ValueSet.language))
+                    joinedload(common.Value.valueset).joinedload(common.ValueSet.parameter),
+                    joinedload(common.Value.valueset).joinedload(common.ValueSet.language)
+                )
         else:
             return Values.base_query(self, query)
+
+    def get_default_options(self):
+        opts = super(Values, self).get_default_options()
+        if self.parameter:
+            opts['aaSorting'] = [[1, 'asc']]
+        return opts
 
     def col_defs(self):
         res = []
         if self.language:
-            res.extend([
-                LinkCol(self, 'gloss_en', sTitle=self.req._('English'), get_object=lambda v: v.valueset.parameter),
+            res = [
+                LinkCol(self,
+                        'name',
+                        sTitle=self.req._('English'),
+                        get_object=lambda v: v.valueset.parameter,
+                        model_col=common.Parameter.name),
                 Col(self,
-                    'gloss_bi',
+                    'description',
                     sTitle=self.req._('Bislama'),
                     get_object=lambda v: v.valueset.parameter,
-                    model_col=common.Parameter.description,
-                ),
-            ])
+                    model_col=common.Parameter.description),
+                Col(self, 'name', sTitle=self.req._('Word')),
+                AudioCol(self, '#', bSearchable=False, bSortable=False),
+            ]
         elif self.parameter:
-            res.extend([
-                LinkCol(self, 'language', sTitle=self.req._('Language'), get_object=lambda v: v.valueset.language),
-                Col(self,
-                    'desc',
-                    sTitle=self.req._('Location'),
-                    get_object=lambda v: v.valueset.language,
-                    model_col=common.Language.description,
-                ),
-            ])
-            # FIXME: link to map!
-        res.extend([
-            Col(self, 'name', sTitle=self.req._('Word')),
-            LinkCol(self, 'language', sTitle=self.req._('Language'),
-                    model_col=common.Language.name,
-                    get_object=lambda v: v.valueset.language),
-            LinkCol(self, 'gloss_en', sTitle=self.req._('English'),
-                    model_col=common.Parameter.name,
-                    get_object=lambda v: v.valueset.parameter),
-            Col(self,
-                'gloss_bi',
-                sTitle=self.req._('Bislama'),
-                get_object=lambda v: v.valueset.parameter,
-                model_col=common.Parameter.description,
-            ),
-            AudioCol(self, '#', bSearchable=False, bSortable=False)
-        ])
+            res = [
+                Col(self, 'name', sTitle=self.req._('Word')),
+                LinkCol(self, 'language', sTitle=self.req._('Language'),
+                        model_col=common.Language.name,
+                        get_object=lambda v: v.valueset.language),
+                LinkToMapCol(self, 'm', get_object=lambda i: i.valueset.language),
+                AudioCol(self, '#', bSearchable=False, bSortable=False),
+            ]
         return res
 
-
-_ = lambda s: s
 
 class VVContributors(Contributors):
     def col_defs(self):
@@ -104,6 +100,9 @@ class VVContributors(Contributors):
 class ConcepticonCol(Col):
     def format(self, item):
         return concepticon.link(self.dt.req, item.concepticon_id, label=item.concepticon_gloss)
+
+    def search(self, qs):
+        return or_(icontains(models.Concept.concepticon_gloss, qs), models.Concept.concepticon_id.__eq__(qs))
 
 
 class Concepts(LongTableMixin, Parameters):

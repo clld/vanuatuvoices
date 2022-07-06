@@ -8,11 +8,9 @@
 
 <%block name="title">${_('Parameter')} ${ctx.name}</%block>
 
-<h2>${_('Parameter')} "${ctx.description if req._LOCALE_ == 'eo' else ctx.name}"</h2>
+<h2>${_('Parameter')} "${ctx.description if req._LOCALE_ == 'eo' else ctx.name} – ${ctx.name if req._LOCALE_ == 'eo' else ctx.description}"</h2>
 
 <div style="clear: both"/>
-% if map_ or request.map:
 ${(map_ or request.map).render()}
-% endif
 
 ${request.get_datatable('values', h.models.Value, parameter=ctx).render()}

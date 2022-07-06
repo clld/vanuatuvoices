@@ -19,12 +19,12 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        'pyclts',
-        'clld>=8.0.0.',
-        'cldfbench',
+        'pyclts>=3.1.1',
+        'clld>=9.2.1',
+        'cldfbench>=1.10.0',
         'clld-glottologfamily-plugin>=4.0',
-        'clld-audio-plugin',
-        'pyglottolog>=3.6.0',
+        'clld-audio-plugin>=1.0',
+        'pyglottolog>=3.7.0',
         'clldmpg>=4.2.0',
 
 ],
