@@ -47,4 +47,5 @@ def main(global_config, **settings):
 
     config.include('clldmpg')
     config.include('clld_audio_plugin')
+    config.register_map('parameter', maps.ConceptsMap)
     return config.make_wsgi_app()
