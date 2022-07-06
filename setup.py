@@ -20,7 +20,7 @@ setup(
     zip_safe=False,
     install_requires=[
         'pyclts>=3.1.1',
-        'clld>=9.2.0.',
+        'clld>=9.2.1',
         'cldfbench>=1.10.0',
         'clld-glottologfamily-plugin>=4.0',
         'clld-audio-plugin>=1.0',
