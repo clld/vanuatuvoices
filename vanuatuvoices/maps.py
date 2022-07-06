@@ -10,7 +10,7 @@ class LanguagesMap(Map):
         }
 
 
-class ConceptsMap(ParameterMap):
+class ConceptMap(ParameterMap):
     def get_options(self):
         return {
             'max_zoom': 17,
@@ -21,4 +21,4 @@ class ConceptsMap(ParameterMap):
 
 def includeme(config):
     config.register_map('languages', LanguagesMap)
-    config.register_map('parameter', ConceptsMap)
+    config.register_map('parameter', ConceptMap)
