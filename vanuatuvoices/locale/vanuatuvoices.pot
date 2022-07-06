@@ -1,156 +1,152 @@
 # Translations template for vanuatuvoices.
-# Copyright (C) 2020 ORGANIZATION
+# Copyright (C) 2022 ORGANIZATION
 # This file is distributed under the same license as the vanuatuvoices project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: vanuatuvoices 0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-12-07 12:46+0100\n"
+"POT-Creation-Date: 2022-07-06 13:38+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.0\n"
+"Generated-By: Babel 2.10.1\n"
 
-#: vanuatuvoices/__init__.py:8
+#: vanuatuvoices/__init__.py:9
 msgid "Languages"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:9
+#: vanuatuvoices/__init__.py:10
 msgid "Parameters"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:10 vanuatuvoices/datatables.py:64
+#: vanuatuvoices/__init__.py:11 vanuatuvoices/datatables.py:83
 #: vanuatuvoices/templates/language/detail_html.mako:4
 #: vanuatuvoices/templates/language/detail_html.mako:6
 msgid "Language"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:11
-#: vanuatuvoices/templates/parameter/detail_html.mako:4
-#: vanuatuvoices/templates/parameter/detail_html.mako:8
+#: vanuatuvoices/__init__.py:12
+#: vanuatuvoices/templates/parameter/detail_html.mako:9
+#: vanuatuvoices/templates/parameter/detail_html.mako:11
 msgid "Parameter"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:12
+#: vanuatuvoices/__init__.py:13
 msgid "Contributors"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:13
+#: vanuatuvoices/__init__.py:14
 msgid "Download"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:14
+#: vanuatuvoices/__init__.py:15
 msgid "Contact"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:15
+#: vanuatuvoices/__init__.py:16
 msgid "Credits"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:16
+#: vanuatuvoices/__init__.py:17
 msgid "Legal"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:17
+#: vanuatuvoices/__init__.py:18
 msgid "Home"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:18
+#: vanuatuvoices/__init__.py:19
 msgid "You can contact us via email at"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:21
+#: vanuatuvoices/__init__.py:22
 msgid "Icon size"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:22
+#: vanuatuvoices/__init__.py:23
 msgid "Show/hide Labels"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:25
+#: vanuatuvoices/__init__.py:26
 msgid "Next"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:26
+#: vanuatuvoices/__init__.py:27
 msgid "Previous"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:27
+#: vanuatuvoices/__init__.py:28
 msgid "First"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:28
+#: vanuatuvoices/__init__.py:29
 msgid "Last"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:29
+#: vanuatuvoices/__init__.py:30
 msgid "No data available in table"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:30
+#: vanuatuvoices/__init__.py:31
 msgid "Showing _START_ to _END_ of _TOTAL_ entries"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:31
+#: vanuatuvoices/__init__.py:32
 msgid "Showing 0 to 0 of 0 entries"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:32
+#: vanuatuvoices/__init__.py:33
 msgid "(filtered from _MAX_ total entries)"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:33
+#: vanuatuvoices/__init__.py:34
 msgid "Show _MENU_ entries"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:34
+#: vanuatuvoices/__init__.py:35
 msgid "Loading..."
 msgstr ""
 
-#: vanuatuvoices/__init__.py:35
+#: vanuatuvoices/__init__.py:36
 msgid "Processing..."
 msgstr ""
 
-#: vanuatuvoices/__init__.py:36
+#: vanuatuvoices/__init__.py:37
 msgid "Search:"
 msgstr ""
 
-#: vanuatuvoices/__init__.py:37
+#: vanuatuvoices/__init__.py:38
 msgid "No matching records found"
 msgstr ""
 
-#: vanuatuvoices/datatables.py:23 vanuatuvoices/datatables.py:86
+#: vanuatuvoices/datatables.py:27 vanuatuvoices/datatables.py:95
 #: vanuatuvoices/templates/credits.mako:26
 msgid "Name"
 msgstr ""
 
-#: vanuatuvoices/datatables.py:26
+#: vanuatuvoices/datatables.py:30
 msgid "Island"
 msgstr ""
 
-#: vanuatuvoices/datatables.py:54 vanuatuvoices/datatables.py:99
+#: vanuatuvoices/datatables.py:69 vanuatuvoices/datatables.py:111
 msgid "English"
 msgstr ""
 
-#: vanuatuvoices/datatables.py:57 vanuatuvoices/datatables.py:100
+#: vanuatuvoices/datatables.py:74 vanuatuvoices/datatables.py:112
 msgid "Bislama"
 msgstr ""
 
-#: vanuatuvoices/datatables.py:67
-msgid "Location"
-msgstr ""
-
-#: vanuatuvoices/datatables.py:74
+#: vanuatuvoices/datatables.py:77 vanuatuvoices/datatables.py:82
 msgid "Word"
 msgstr ""
 
-#: vanuatuvoices/datatables.py:87 vanuatuvoices/templates/credits.mako:27
+#: vanuatuvoices/datatables.py:96 vanuatuvoices/templates/credits.mako:27
 msgid "Role"
 msgstr ""
 
