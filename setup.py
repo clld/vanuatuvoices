@@ -23,7 +23,7 @@ setup(
         'clld>=9.2.0.',
         'cldfbench>=1.10.0',
         'clld-glottologfamily-plugin>=4.0',
-        'clld-audio-plugin>=0.1.2',
+        'clld-audio-plugin>=1.0',
         'pyglottolog>=3.7.0',
         'clldmpg>=4.2.0',
 
