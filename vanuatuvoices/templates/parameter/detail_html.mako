@@ -8,7 +8,19 @@
 
 <%block name="title">${_('Parameter')} ${ctx.name}</%block>
 
-<h2>${_('Parameter')} "${ctx.description if req._LOCALE_ == 'eo' else ctx.name} – ${ctx.name if req._LOCALE_ == 'eo' else ctx.description}"</h2>
+%if req._LOCALE_ == 'eo':
+    %if ctx.description:
+        <h2>${_('Parameter')} "${ctx.description} – ${ctx.name}"</h2>
+    %else:
+        <h2>${_('Parameter')} "${ctx.name}"</h2>
+    %endif
+%else:
+    %if ctx.description:
+        <h2>${_('Parameter')} "${ctx.name} – ${ctx.description}"</h2>
+    %else:
+        <h2>${_('Parameter')} "${ctx.name}"</h2>
+    %endif
+%endif
 
 <div style="clear: both"/>
 ${(map_ or request.map).render()}
