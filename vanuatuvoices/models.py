@@ -21,6 +21,9 @@ class Variety(CustomModelMixin, common.Language):
     contribution_pk = Column(Integer, ForeignKey('contribution.pk'))
     contribution = relationship(common.Contribution, backref=backref('variety', uselist=False))
     island = Column(Unicode)
+    count_lexemes = Column(Integer)
+    count_concepts = Column(Integer)
+    count_soundfiles = Column(Integer)
 
     @property
     def inventory(self):
@@ -36,3 +39,5 @@ class Concept(CustomModelMixin, common.Parameter):
     pk = Column(Integer, ForeignKey('parameter.pk'), primary_key=True)
     concepticon_id = Column(Unicode)
     concepticon_gloss = Column(Unicode)
+    concepticon_semantic_field = Column(Unicode)
+    count_lexemes = Column(Integer)

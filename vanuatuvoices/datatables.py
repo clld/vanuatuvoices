@@ -30,6 +30,18 @@ class Languages(LongTableMixin, datatables.Languages):
                 sTitle=self.req._('Island'),
                 model_col=models.Variety.island,
                 choices=get_distinct_values(models.Variety.island)),
+            Col(self, 'count_concepts',
+                sTitle=self.req._('# concepts'),
+                sTooltip=self.req._('number of concepts per language'),
+                model_col=models.Variety.count_concepts),
+            Col(self, 'count_lexemes',
+                sTitle=self.req._('# words'),
+                sTooltip=self.req._('number of words per language'),
+                model_col=models.Variety.count_lexemes),
+            Col(self, 'count_soundfiles',
+                sTitle=self.req._('# audio'),
+                sTooltip=self.req._('number of sound files per language'),
+                model_col=models.Variety.count_soundfiles),
             Col(self,
                 'latitude',
                 sDescription='<small>The geographic latitude</small>'),
@@ -56,37 +68,58 @@ class Words(LongTableMixin, Values):
 
     def get_default_options(self):
         opts = super(Values, self).get_default_options()
-        if self.parameter:
-            opts['aaSorting'] = [[1, 'asc']]
+        opts['aaSorting'] = [[1, 'asc']]
         return opts
 
     def col_defs(self):
-        res = []
         if self.language:
-            res = [
+            return [
                 LinkCol(self,
                         'name',
                         sTitle=self.req._('English'),
                         get_object=lambda v: v.valueset.parameter,
                         model_col=common.Parameter.name),
                 Col(self,
+                    'name',
+                    sTitle=self.req._('Semantic Field'),
+                    get_object=lambda v: v.valueset.parameter,
+                    model_col=models.Concept.concepticon_semantic_field,
+                    choices=get_distinct_values(models.Concept.concepticon_semantic_field)),
+                Col(self,
                     'description',
                     sTitle=self.req._('Bislama'),
                     get_object=lambda v: v.valueset.parameter,
                     model_col=common.Parameter.description),
-                Col(self, 'name', sTitle=self.req._('Word')),
+                LinkCol(self, 'name', sTitle=self.req._('Word')),
                 AudioCol(self, '#', bSearchable=False, bSortable=False),
             ]
         elif self.parameter:
-            res = [
-                Col(self, 'name', sTitle=self.req._('Word')),
+            return [
+                LinkCol(self, 'name', sTitle=self.req._('Word')),
                 LinkCol(self, 'language', sTitle=self.req._('Language'),
                         model_col=common.Language.name,
                         get_object=lambda v: v.valueset.language),
                 LinkToMapCol(self, 'm', get_object=lambda i: i.valueset.language),
                 AudioCol(self, '#', bSearchable=False, bSortable=False),
             ]
-        return res
+        return [
+            LinkCol(self, 'name', sTitle=self.req._('Word')),
+            LinkCol(self,
+                    'name',
+                    sTitle=self.req._('English'),
+                    get_object=lambda v: v.valueset.parameter,
+                    model_col=common.Parameter.name),
+            Col(self,
+                'name',
+                sTitle=self.req._('Semantic Field'),
+                get_object=lambda v: v.valueset.parameter,
+                model_col=models.Concept.concepticon_semantic_field,
+                choices=get_distinct_values(models.Concept.concepticon_semantic_field)),
+            LinkCol(self, 'language', sTitle=self.req._('Language'),
+                    model_col=common.Language.name,
+                    get_object=lambda v: v.valueset.language),
+            AudioCol(self, '#', bSearchable=False, bSortable=False),
+        ]
 
 
 class VVContributors(Contributors):
@@ -110,7 +143,14 @@ class Concepts(LongTableMixin, Parameters):
         return [
             LinkCol(self, 'name', sTitle=self.req._('English')),
             Col(self, 'description', sTitle=self.req._('Bislama')),
+            Col(self, 'count_lexemes',
+                sTitle=self.req._('# words'),
+                sTooltip=self.req._('number of words per concept'),
+                model_col=models.Concept.count_lexemes),
             ConcepticonCol(self, 'concepticon'),
+            Col(self, 'concepticon_semantic_field',
+                model_col=models.Concept.concepticon_semantic_field,
+                choices=get_distinct_values(models.Concept.concepticon_semantic_field)),
         ]
 
 

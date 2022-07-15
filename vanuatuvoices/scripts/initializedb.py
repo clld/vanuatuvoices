@@ -14,6 +14,8 @@ from cldfbench import get_dataset
 from clld_audio_plugin.models import Counterpart
 from clld_audio_plugin import util as audioutil
 from pyclts import CLTS
+from sqlalchemy import func
+from sqlalchemy.orm import joinedload
 
 import vanuatuvoices
 from vanuatuvoices import models
@@ -59,11 +61,11 @@ def main(args):  # pragma: no cover
         )
     data.add(
         common.Contributor,
-            'forkel',
-            id='forkel',
-            name='Robert Forkel',
-            description='Data curation and website implementation',
-            jsondata=dict(img=None),
+        'forkel',
+        id='forkel',
+        name='Robert Forkel',
+        description='Data curation and website implementation',
+        jsondata=dict(img=None),
     )
     for ord, cid in enumerate(['walworth', 'forkel', 'gray']):
         DBSession.add(common.Editor(
@@ -116,10 +118,11 @@ def main(args):  # pragma: no cover
             models.Concept,
             param['id'],
             id=param['id'],
-            name='{} [{}]'.format(param['name'], param['id'].split('_')[0]),
+            name=param['name'],
             description=param['Bislama_Gloss'],
             concepticon_id=param['concepticonReference'],
             concepticon_gloss=param['Concepticon_Gloss'],
+            concepticon_semantic_field=param['Concepticon_SemanticField'],
         )
     inventories = collections.defaultdict(collections.Counter)
     for form in args.cldf.iter_rows('FormTable', 'id', 'form', 'languageReference', 'parameterReference', 'source'):
@@ -165,3 +168,20 @@ def prime_cache(args):
     This procedure should be separate from the db initialization, because
     it will have to be run periodically whenever data has been updated.
     """
+
+    for cpt in DBSession.query(
+        models.Concept, func.count(models.Concept.pk))\
+            .join(common.ValueSet).join(common.Value).group_by(
+                models.Concept.pk, common.Parameter.pk):
+        cpt[0].count_lexemes = cpt[1]
+
+    for language in DBSession.query(common.Language).options(
+            joinedload(common.Language.valuesets, common.ValueSet.references)):
+        language.count_concepts = len(language.valuesets)
+        language.count_lexemes = len(DBSession.query(common.Value.id)
+                                     .filter(common.ValueSet.language_pk == language.pk)
+                                     .join(common.ValueSet).all())
+        language.count_soundfiles = len(DBSession.query(Counterpart.id)
+                                     .filter(common.ValueSet.language_pk == language.pk)
+                                     .filter(Counterpart.audio.isnot(None))
+                                     .join(common.ValueSet).all())
