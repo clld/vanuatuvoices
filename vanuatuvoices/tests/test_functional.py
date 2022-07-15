@@ -21,6 +21,7 @@ import pytest
         ('get_html', '/valuesets'),
         ('get_html', '/values/Tiraxorap-1_one-1'),
         ('get_dt', '/parameters?sSearch_2=right'),
+        ('get_dt', '/values?sSearch_2=right'),
     ])
 def test_pages(app, method, path):
     getattr(app, method)(path)
