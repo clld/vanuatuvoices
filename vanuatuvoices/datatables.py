@@ -147,7 +147,7 @@ class Concepts(LongTableMixin, Parameters):
                 sTitle=self.req._('# words'),
                 sTooltip=self.req._('number of words per concept'),
                 model_col=models.Concept.count_lexemes),
-            ConcepticonCol(self, 'concepticon'),
+            # ConcepticonCol(self, 'concepticon'),
             Col(self, 'concepticon_semantic_field',
                 model_col=models.Concept.concepticon_semantic_field,
                 choices=get_distinct_values(models.Concept.concepticon_semantic_field)),
