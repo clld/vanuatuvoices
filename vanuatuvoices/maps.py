@@ -13,6 +13,7 @@ class LanguagesMap(Map):
 class ConceptMap(ParameterMap):
     def get_options(self):
         return {
+            'with_audioplayer': True,
             'max_zoom': 17,
             'base_layer': 'Esri.WorldTopoMap',
             'show_labels': False,
