@@ -125,7 +125,7 @@ def main(args):  # pragma: no cover
             concepticon_semantic_field=param['Concepticon_SemanticField'],
         )
     inventories = collections.defaultdict(collections.Counter)
-    for form in args.cldf.iter_rows('FormTable', 'id', 'form', 'languageReference', 'parameterReference', 'source'):
+    for form in args.cldf.iter_rows('FormTable', 'id', 'form', 'segments', 'languageReference', 'parameterReference', 'source'):
         inventories[form['languageReference']].update(form['Segments'])
         vsid = (form['languageReference'], form['parameterReference'])
         vs = data['ValueSet'].get(vsid)
@@ -146,6 +146,7 @@ def main(args):  # pragma: no cover
             form['id'],
             id=form['id'],
             name=form['form'],
+            description=' '.join(form['segments']),
             valueset=vs,
             audio=form2audio.get(form['id'])
         )
