@@ -67,6 +67,13 @@ def main(args):  # pragma: no cover
         description='Data curation and website implementation',
         jsondata=dict(img=None),
     )
+    data.add(
+        common.Contributor,
+        'fitzpatrick',
+        id='fitzpatrick',
+        name='Tom Fitzpatrick',
+        jsondata=dict(img=None),
+    )
     for ord, cid in enumerate(['walworth', 'forkel', 'gray']):
         DBSession.add(common.Editor(
             ord=ord,
@@ -145,7 +152,7 @@ def main(args):  # pragma: no cover
             Counterpart,
             form['id'],
             id=form['id'],
-            name=form['form'],
+            name=form['form'].replace('_', ' '),
             description=' '.join(form['segments']),
             valueset=vs,
             audio=form2audio.get(form['id'])
