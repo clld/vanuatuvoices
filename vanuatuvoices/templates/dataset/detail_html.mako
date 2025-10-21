@@ -14,6 +14,11 @@
     </div>
 </%def>
 
+
+<div style="float:left;margin-top:10px">
+    <img src="${req.static_url('vanuatuvoices:static/logo_vv.svg')}" width=100 alt="Logo SVG"/>
+</div>
+
 <div id="with-background">
     <h2>${_('Welcome to')} Vanuatu Voices</h2>
 

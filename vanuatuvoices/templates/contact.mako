@@ -14,7 +14,7 @@
 <p style="font-size: larger;">
     If you would like to propose a dataset for a doculect not already included 
     in Vanuatu Voices, please email us at 
-    <a href="mailto:vanuatuvoices@shh.mpg.de">vanuatuvoices@shh.mpg.de</a> with the following information. 
+    <a href="mailto:vanuatuvoices@eva.mpg.de">vanuatuvoices@eva.mpg.de</a> with the following information.
 Please do not send any recordings,  transcriptions, or data until requested.</p>
 <dl>
 <dt>Your name:</dt>
