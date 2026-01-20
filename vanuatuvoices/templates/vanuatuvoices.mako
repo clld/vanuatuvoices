@@ -28,8 +28,6 @@
             z-index: -2;
         }
     </style>
-        <script src="${req.static_url('vanuatuvoices:static/L.Control.Resizer.js')}"></script>
-        <link rel="stylesheet" href="${req.static_url('vanuatuvoices:static/L.Control.Resizer.css')}">
 </%block>
 
 <%block name="navextra">
