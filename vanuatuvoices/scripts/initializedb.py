@@ -31,7 +31,7 @@ def main(args):  # pragma: no cover
         id=vanuatuvoices.__name__,
         name='Vanuatu Voices',
         domain='vanuatuvoices.clld.org',
-        contact="vanuatuvoices@shh.mpg.de",
+        contact="vanuatuvoices@eva.mpg.de",
         publisher_name="Max Planck Institute for Evolutionary Anthropology",
         publisher_place="Leipzig",
         publisher_url="https://www.eva.mpg.de",
@@ -43,7 +43,10 @@ def main(args):  # pragma: no cover
 
     )
 
-    form2audio = audioutil.form2audio(args.cldf, 'audio/mpeg')
+    form2audio = {}
+    for r in args.cldf['MediaTable']:
+        if r['Media_Type'] == 'audio/mpeg':
+            form2audio[r['Form_ID']] = f'https://s3.nexus.mpcdf.mpg.de/eva-dlce-vanuatuvoices/{r["ID"]}.mp3'
 
     r = get_dataset(args.cldf.directory.parent / 'lexibank_vanuatuvoices.py')
     authors, _ = r.get_creators_and_contributors()
