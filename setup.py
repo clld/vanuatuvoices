@@ -19,6 +19,7 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
+        'pylexibank',
         'pyclts>=3.1.1',
         'clld>=11.0.1',
         'cldfbench>=1.14.0',
@@ -26,7 +27,7 @@ setup(
         'clld-audio-plugin>=1.0',
         'pyglottolog>=3.12.0',
         'clldmpg>=4.3.0',
-
+        'psycopg2',
 ],
 extras_require={
         'dev': ['flake8', 'waitress', 'psycopg2'],
