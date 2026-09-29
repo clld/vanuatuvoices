@@ -11,7 +11,6 @@ from clld.db.models import common
 from clld.lib import bibtex
 from nameparser import HumanName
 from cldfbench import get_dataset
-from clld_audio_plugin.models import Counterpart
 from clld_audio_plugin import util as audioutil
 from pyclts import CLTS
 from sqlalchemy import func
@@ -125,7 +124,7 @@ def main(args):  # pragma: no cover
             concepticon_semantic_field=param['Concepticon_SemanticField'],
         )
     inventories = collections.defaultdict(collections.Counter)
-    for form in args.cldf.iter_rows('FormTable', 'id', 'form', 'segments', 'languageReference', 'parameterReference', 'source'):
+    for form in args.cldf.iter_rows('FormTable', 'id', 'form', 'segments', 'languageReference', 'parameterReference', 'source', 'Orthography'):
         inventories[form['languageReference']].update(form['Segments'])
         vsid = (form['languageReference'], form['parameterReference'])
         vs = data['ValueSet'].get(vsid)
@@ -142,11 +141,12 @@ def main(args):  # pragma: no cover
             sid, pages = Sources.parse(ref)
             refs[(vsid, sid)].append(pages)
         data.add(
-            Counterpart,
+            models.Word,
             form['id'],
             id=form['id'],
             name=form['form'].replace('_', ' '),
             description=' '.join(form['segments']),
+            orthography=form.get('Orthography') or None,
             valueset=vs,
             audio=form2audio.get(form['id'])
         )
@@ -182,7 +182,7 @@ def prime_cache(args):
         language.count_lexemes = len(DBSession.query(common.Value.id)
                                      .filter(common.ValueSet.language_pk == language.pk)
                                      .join(common.ValueSet).all())
-        language.count_soundfiles = len(DBSession.query(Counterpart.id)
+        language.count_soundfiles = len(DBSession.query(models.Word.id)
                                      .filter(common.ValueSet.language_pk == language.pk)
-                                     .filter(Counterpart.audio.isnot(None))
+                                     .filter(models.Word.audio.isnot(None))
                                      .join(common.ValueSet).all())

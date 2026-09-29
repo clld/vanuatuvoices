@@ -6,6 +6,7 @@ from clld.web.datatables.contributor import Contributors
 from clld.web.datatables.value import Values
 from clld.web.datatables.parameter import Parameters
 from clld.web.util import concepticon
+from clld.web.util.helpers import link
 from clld.db.models import common
 from clld.db.util import get_distinct_values, icontains
 from clld_audio_plugin.datatables import AudioCol
@@ -52,6 +53,15 @@ class Languages(LongTableMixin, datatables.Languages):
         ]
 
 
+class WordCol(LinkCol):
+    def format(self, item):
+        obj = self.get_obj(item)
+        if obj:
+            return link(self.dt.req, obj, label=item.orthography, **self.get_attrs(item))
+        else:
+            return ''
+
+
 class Words(LongTableMixin, Values):
     def base_query(self, query):
         if not any([self.language, self.parameter, self.contribution]):
@@ -90,13 +100,13 @@ class Words(LongTableMixin, Values):
                     sTitle=self.req._('Bislama'),
                     get_object=lambda v: v.valueset.parameter,
                     model_col=common.Parameter.description),
-                LinkCol(self, 'name', sTitle=self.req._('Word')),
+                WordCol(self, 'orthography', sTitle=self.req._('Word')),
                 Col(self, 'description', sTitle=self.req._('Segments')),
                 AudioCol(self, '#', bSearchable=False, bSortable=False),
             ]
         elif self.parameter:
             return [
-                LinkCol(self, 'name', sTitle=self.req._('Word')),
+                WordCol(self, 'orthography', sTitle=self.req._('Word')),
                 Col(self, 'description', sTitle=self.req._('Segments')),
                 LinkCol(self, 'language', sTitle=self.req._('Language'),
                         model_col=common.Language.name,
@@ -105,7 +115,7 @@ class Words(LongTableMixin, Values):
                 AudioCol(self, '#', bSearchable=False, bSortable=False),
             ]
         return [
-            LinkCol(self, 'name', sTitle=self.req._('Word')),
+            WordCol(self, 'orthography', sTitle=self.req._('Word')),
             LinkCol(self,
                     'name',
                     sTitle=self.req._('English'),
