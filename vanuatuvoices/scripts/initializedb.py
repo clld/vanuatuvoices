@@ -23,7 +23,7 @@ from vanuatuvoices import models
 def main(args):  # pragma: no cover
     license = licenses.find(args.cldf.properties['dc:license'])
     assert license and license.id.startswith('CC-')
-    clts = CLTS(input('Path to cldf-clts/clts:') or '../../cldf-clts/clts-data')
+    clts = CLTS(input('Path to cldf-clts/clts:') or '../clts')
     data = Data()
     ds = data.add(
         common.Dataset,
