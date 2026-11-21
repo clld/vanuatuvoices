@@ -9,7 +9,7 @@ pip install -e .[test]
 ```
 
 ```shell
-clld initdb development.ini --cldf ../vanuatuvoices-cldf/cldf/cldf-metadata.json
+clld initdb development.ini --cldf ../vanuatuvoices-cldf/cldf/cldf-metadata.json --clts ../../cldf-clts/clts-data
 ```
 
 ```shell

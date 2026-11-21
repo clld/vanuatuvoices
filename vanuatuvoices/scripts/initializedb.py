@@ -9,9 +9,8 @@ from clld.cliutil import Data, bibtex2source
 from clld.db.meta import DBSession
 from clld.db.models import common
 from clld.lib import bibtex
-from nameparser import HumanName
+import nameparser
 from cldfbench import get_dataset
-from clld_audio_plugin import util as audioutil
 from pyclts import CLTS
 from sqlalchemy import func
 from sqlalchemy.orm import joinedload
@@ -23,7 +22,7 @@ from vanuatuvoices import models
 def main(args):  # pragma: no cover
     license = licenses.find(args.cldf.properties['dc:license'])
     assert license and license.id.startswith('CC-')
-    clts = CLTS(input('Path to cldf-clts/clts:') or '../clts')
+    clts = CLTS(args.clts)
     data = Data()
     ds = data.add(
         common.Dataset,
@@ -51,7 +50,7 @@ def main(args):  # pragma: no cover
     r = get_dataset(args.cldf.directory.parent / 'lexibank_vanuatuvoices.py')
     authors, _ = r.get_creators_and_contributors()
     for ord, author in enumerate(authors):
-        cid = slug(HumanName(author['name']).last)
+        cid = slug(nameparser.parse(author['name']).family)
         img = pathlib.Path(vanuatuvoices.__file__).parent / 'static' / '{}.jpg'.format(cid)
         c = data.add(
             common.Contributor,
@@ -80,7 +79,7 @@ def main(args):  # pragma: no cover
         for role in ['phonetic_transcriptions', 'recording', 'sound_editing']:
             for name in c[role].split(' and '):
                 if name:
-                    cid = slug(HumanName(name).last)
+                    cid = slug(nameparser.parse(name).family)
                     contribs[c['Language_ID']][cid].append(role)
 
     for lang in args.cldf.iter_rows('LanguageTable', 'id', 'glottocode', 'name', 'latitude', 'longitude'):
