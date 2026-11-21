@@ -42,6 +42,8 @@ Homepage = "https://github.com/clld/vanuatuvoices"
 initdb = [
     "clld[initdb]",
     "nameparser>=2.0",
+    "cldfbench",
+    "pylexibank",
 ]
 dev = [
     "clld[dev]",
